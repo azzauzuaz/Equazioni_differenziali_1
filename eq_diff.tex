@@ -547,7 +547,7 @@ Si pu\`o dimostrare che $G$ \`e simmetrica: $G(\x,\y)=G(\y,\x)$.
 
 \underline{Esempio}: Si consideri una carica puntiforme in $\y$ con carica $q=1$. 
 
-$\rho=q\delta(\x-\y)$ è la densità di carica. 
+$\rho=q\delta(\x-\y)$ \`e la densit\`a di carica. 
 
 Dalle equazioni di Maxwell si ha:
 \begin{equation}
@@ -797,15 +797,15 @@ T_0(x)=\left\{\begin{matrix}
 \begin{equation}
 T(x,t)=\frac{\hat{T}_0}{2}\left[\operatorname{erf}\left(\frac{x+L}{2\sqrt{\chi t}}\right)-\operatorname{erf}\left(\frac{x-L}{2\sqrt{\chi t}}\right)\right]
 \end{equation}
-
 dove la funzione degli errori di Gauss \`e definita:
 \begin{equation}
 \operatorname{erf}(s):=\frac{2}{\sqrt{\pi}}\int_0^s e^{-r^2}dr
 \end{equation}
 
-%inserisci immagine 
-
-\medskip
+Dato che la soluzione \`e pari possiamo limitarci a $x\geq 0$
+\begin{center}
+\includegraphics[width=0.5\textwidth]{immagini/calore}
+\end{center}
 
 \underline{Dimostrazione} che la \eqref{2.11} soddisfa il dato iniziale per $t\rightarrow 0$:
 
@@ -1285,7 +1285,7 @@ Integro $\Delta G$ su un disco $D$ centrato in 0, con raggio $\varepsilon$:
 \[
 \int_D \Delta G \, d^2\x=\int_D \nabla\cdot(\nabla G) \, d^2\x \overset{\text{Gauss}}{=}\int_{\partial D} \vect{n} \cdot \nabla G \, ds
 \]
-con $\vect{n}=\hat{\vect{e}}_r$ (versore normale), $ds=r\,d\varphi$ (elemento di linea sul cerchio)
+con $\vect{n}=\vect{e}_r$ (versore normale), $ds=r\,d\varphi$ (elemento di linea sul cerchio)
 \[
 \int_{\partial D}\vect{n}\cdot \nabla G \, ds=\int_{0}^{2\pi}\left(\frac{\partial}{\partial r}G\right)r \, d\varphi=\int_0^{2\pi}-\frac{1}{2\pi r}r \, d\varphi =-1 =-\int_D \delta(\x)\, d^2\x \quad \checkmark
 \]
@@ -1768,6 +1768,7 @@ R(x,\xi)+\frac{v_2(\alpha)v_1(x)-v_1(\alpha)v_2(x)}{D}R(\beta,\xi)=
 \]
 
 Definiamo:
+\begin{samepage}
 \begin{equation}
 G(x,\xi):=
 \begin{cases}
@@ -1777,8 +1778,7 @@ G(x,\xi):=
 \label{2.59}
 \end{equation}
 \centerline{\emph{funzione di Green (two-sided)}}
-
-\medskip
+\end{samepage}
 
 $\Rightarrow$ soluzione del problema ai valori al contorno \eqref{2.57}:
 \begin{equation}
@@ -2509,7 +2509,7 @@ G(r,\theta,\varphi,r',\theta',\varphi')=\sum_{l=0}^{\infty}\frac{1}{(2l+1)R} \Bi
 \]
 
 \begin{center}
-\includegraphics[width=0.4\textwidth]{immagini/vettori2-var}
+\includegraphics[width=0.4\textwidth]{immagini/vettori2}
 \end{center}
 
 Funzione generatrice dei polinomi di Legendre:
@@ -2550,7 +2550,7 @@ con
 \]
 
 \begin{center}
-\includegraphics[width=0.3\textwidth]{immagini/palla}
+\includegraphics[width=0.25\textwidth]{immagini/palla}
 \end{center}
 
 $1^o$ termine della \eqref{2.91'}: Carica puntiforme in $\vect{r}'$
@@ -2927,7 +2927,7 @@ La classificazione \`e basata solo sulla parte contenente le derivate seconde, $
 
 \smallskip
 
-\underline{Definizione}: Sia $\delta(x,y)=a_{12}^2 - a_{11}a_{22}$, il \emph{discriminante} della parte principale.
+\underline{Definizione}: Sia $\delta(x,y)=a_{12}^2 - a_{11}a_{22}$, il \emph{discriminante} della parte principale
 \begin{itemize}
 \item se $\delta >0$ l'equazione \eqref{2.105} si dice \emph{iperbolica}
 \item se $\delta =0$ l'equazione \eqref{2.105} si dice \emph{parabolica}
@@ -2939,7 +2939,10 @@ N.B.: La definizione si estende anche alle equazioni \emph{quasilinearli} (nelle
 
 \underline{Esempio} quasilineare: \emph{Equazione delle superfici minime}
 
-Considera la superficie in $\R^3$ definita da $z=u(x,y) : (x,y) \in \Omega \subset \R^2$
+Considera la superficie in $\R^3$ definita da
+\[
+z=u(x,y) : (x,y) \in \Omega \subset \R^2
+\]
 \begin{center}
 \includegraphics[width=0.4\textwidth]{immagini/superficie}
 \end{center}
@@ -2982,18 +2985,29 @@ con $u_x=\frac{\partial u}{\partial x}$, $u_y=\frac{\partial u}{\partial y}$.
 \centerline{(vettore normale)}
 
 \[
-\Rightarrow dA = |\vect{N}|dxdy=\sqrt{u_x^2 + u_y^2 +1}dxdy 
+\Rightarrow dA = |\vect{N}|\,dx\,dy=\sqrt{u_x^2 + u_y^2 +1}\,dx\,dy 
 \]
 \centerline{(elemento di superficie)}
 
 $\Rightarrow$ area della superficie:
 \begin{equation}
-A=\int_{\Omega} \sqrt{1+(\nabla u)^2} dxdy\equiv \int_{\Omega} \mathcal{L}dxdy (106)
+A=\int_{\Omega} \sqrt{1+(\nabla u)^2} \,dx\,dy\equiv \int_{\Omega} \mathcal{L}\,dx\,dy 
+\label{2.106}
 \end{equation}
 
 Superfici minime: $\delta A=0$ (principio variazionale)
 
-Equazioni di Eulero-Lagrange:
+\medskip
+
+In meccanica classica
+\[
+\mathcal{S}=\int \mathcal{L} dt \qquad \mathcal{L}=\mathcal{L}=(x,\dot{x}) \qquad \delta\mathcal{S}=0 \Rightarrow \frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{x}}-\frac{\partial \mathcal{L}}{\partial x}=0
+\]
+Equazione di Eulero-Lagrange
+
+\medskip
+
+Equazioni di Eulero-Lagrange (in 2 variabili):
 \begin{equation}
 \frac{\partial}{\partial x_i}\left( \frac{\partial \mathcal{L}}{\partial (\frac{\partial u}{\partial x_i})} \right)-\frac{\partial \mathcal{L}}{\partial u}=0
 \label{2.107}
@@ -3001,7 +3015,10 @@ Equazioni di Eulero-Lagrange:
 Si sottintende la somma su $i$ da 1 a 2
 
 \[
-\frac{\partial}{\partial x_i}:=\partial_i \Rightarrow \frac{\partial\mathcal{L}}{\partial \partial_i u} = \frac{1}{2} \big(1 +(\nabla u)^2\big)^{-\frac{1}{2}} 2\partial_i u=\frac{\partial_i u}{\sqrt{(1+(\nabla u)^2}}, \qquad \frac{\partial \mathcal{L}}{\partial u}=0 
+\frac{\partial}{\partial x_i}:=\partial_i \Rightarrow \partial_i \left( \frac{\partial \mathcal{L}}{\partial \partial_i u} \right)-\frac{\partial \mathcal{L}}{\partial u}=0
+\]
+\[
+\frac{\partial\mathcal{L}}{\partial \partial_i u} = \frac{1}{2} \big(1 +(\nabla u)^2\big)^{-\frac{1}{2}} 2\partial_i u=\frac{\partial_i u}{\sqrt{(1+(\nabla u)^2}}, \qquad \frac{\partial \mathcal{L}}{\partial u}=0 
 \]
 \[
 \eqref{2.107}\Rightarrow \partial_i \left( \frac{\partial_i u}{\sqrt{1+(\nabla u)^2}}\right)=0
@@ -3013,45 +3030,68 @@ che si scrive anche
 \end{equation}
 \centerline{\emph{Equazione delle superfici minime}}
 
+\medskip
+
 In alternativa alle equazioni di Eulero-Lagrange \eqref{2.107}:
 \[
-\delta\mathcal{L}=\delta\sqrt{1+(\nabla u)^2}=\frac{1}{2}\big(1+(\nabla u)^2\big)^{-\frac{1}{2}}2\nabla u \nabla \delta u
+\delta\mathcal{L}=\delta\sqrt{1+(\nabla u)^2}=\frac{1}{2}\big(1+(\nabla u)^2\big)^{-\frac{1}{2}}2\nabla u \underbrace{\delta \nabla u}_{\nabla \delta u}=
 \]
 Integro per parti e tengo conto di $\delta u\big|_\text{bordo}=0$
 
-Come in meccanica: $L=\frac{1}{2} m x^2$, $\delta L = m \dot{x} \delta \dot{x} \rightarrow -m \ddot{x} \delta x$
+\medskip
+
+Come in meccanica:
 \[
-\rightarrow -\delta u \nabla \cdot \left(\frac{\nabla u}{\sqrt{1+(\nabla u)^2}}\right)\overset{!}{=}0 \quad \forall \delta u \Rightarrow \eqref{2.108}
+\mathcal{L}=\frac{1}{2} m \dot{x}^2 \qquad \delta \mathcal{L} = m \dot{x} \delta \dot{x} \rightarrow -m \ddot{x} \delta x
 \]
+
+\medskip
+
+\[
+= -\delta u \nabla \cdot \left(\frac{\nabla u}{\sqrt{1+(\nabla u)^2}}\right)\overset{!}{=}0 \quad \forall \delta u \Rightarrow \eqref{2.108}
+\]
+
+\medskip
+
 \[
 \eqref{2.108} \Rightarrow \frac{\partial_i \partial_i u}{\sqrt{1+(\nabla u)^2}} + \partial_i u \left(-\frac{1}{2}\right) \big(1+(\nabla u)^2\big)^{-\frac{3}{2}} \underbrace{\partial_i (\nabla u)^2}_{ \substack{\partial_i(\partial_j u \partial_j u)= \\ =2(\partial_i\partial_j u)\partial_j u } } =0
 \]
 \[
 \Rightarrow \big(1+ (\nabla u)^2 \big) \Delta u - \partial_x u \partial_x u \partial_x^2 u - \partial_x u\partial_y u \partial_x\partial_y u - \partial_yu \partial_x u \partial_y \partial_x u - \partial_y u\partial_y u \partial_y^2 u =0
 \]
-e poich\'e $(\nabla u)^2=(\partial_x u)^2 + (\partial_y u)^2$ e $\Delta u =\partial_x^2 u + \partial_y^2 u$
+dove
+\[
+(\nabla u)^2=(\partial_x u)^2 + (\partial_y u)^2 \quad \text{e}\quad \Delta u =\partial_x^2 u + \partial_y^2 u
+\]
 \[
 \Rightarrow u_{xx} + u_{yy} + u_x^2 u_{yy} + u_y^2 u_{xx} - 2u_xu_y u_{xy}=0
 \]
+\begin{samepage}
 \begin{equation}
 \Rightarrow (1+u_y^2)u_{xx} + (1+u_x^2) u_{yy} - 2u_x u_y u_{xy}=0 
 \tag{$\theequation^\prime$}
 \label{2.108'}
 \end{equation}
+\centerline{\emph{Equazione di Young-Laplace}}
+\end{samepage}
 \[
 \Rightarrow a_{11}=1+u_y^2, \qquad a_{22}=1+u_x^2, \qquad a_{12}=-u_x u_y
 \]
 Posso calcolare il discriminante:
 \[
-\delta = a_{12}^2 -a_{11}a_{22} = u_x^2 u_y^2 - (1+u_x^2 + u_y^2 + u_x^2u_y^2)=-(1+(\nabla u)^2) <0
+\delta = a_{12}^2 -a_{11}a_{22} = u_x^2 u_y^2 - (1+u_x^2 + u_y^2 + u_x^2u_y^2)=-\big(1+(\nabla u)^2\big) <0
 \]
-\centerline{$\Rightarrow$ equazione ellittica}
-\centerline{\emph{Equazione di Young-Laplace}}
+$\Rightarrow$ equazione ellittica
 
-Definisco la matrice $ A:=\left(\begin{matrix}
+\medskip
+
+Definisco la matrice 
+\[
+A:=\left(\begin{matrix}
 a_{11} & a_{12}\\
 a_{12} & a_{22}
-\end{matrix}\right)$, $\det A=-\delta$
+\end{matrix}\right) \Rightarrow \det A=-\delta
+\]
 \begin{itemize}
 \item Iperbolica ($\delta >0$): $\det A<0$, 2 autovalori di segno opposto
 \item Parabolica ($\delta =0$): 1 autovalore=0 (altrimenti banale)
@@ -3059,71 +3099,85 @@ a_{12} & a_{22}
 \end{itemize}
 \`E il parallelismo con il comportamento della forma quadratica generata da $A$ a suggerire la medesima denominazione delle coniche.
 
+\medskip
+
 \underline{Esempi}:
 
 \begin{itemize}
 \item Equazioni ellittiche: Laplace, Poisson (parte principale $\Delta u$)
-\item Equazioni paraboliche: Equazione del calore $\partial_t u = \chi \partial_x^2 u$ ($y \leftrightarrow t$)
-\item Equazioni iperboliche: Equazione delle onde e dei telegrafisti (quest'ultima per $\epsilon \neq 0$, altrimenti parabolica), equazione di Klein-Gordon
+\item Equazioni paraboliche: Equazione del calore (in due variabili) $\partial_t u = \chi \partial_x^2 u$ ($y \leftrightarrow t$)
+\item Equazioni iperboliche: Equazione delle onde e dei telegrafisti (quest'ultima per $\varepsilon \neq 0$, altrimenti parabolica), equazione di Klein-Gordon
 \end{itemize}
 
 \section{Il problema di Cauchy}
+
 La classificazione ha una prima motivazione nel problema di Cauchy: trovare una funzione $u\in C^2$ che soddisfi la \eqref{2.105} e i dati di Cauchy, ossia:
 \begin{equation}
-u \big|_{\gamma}=\Phi \big|_{\gamma}, \quad \frac{\partial u}{\partial n} \Big|_{\gamma}=\Psi \big|_{\gamma}
+u \big|_{\gamma}=\phi \big|_{\gamma} \qquad \frac{\partial u}{\partial n} \Big|_{\gamma}=\psi \big|_{\gamma}
 \label{2.109}
 \end{equation}
 
-dove $\Phi$, $\Psi$ sono funzioni assegnate e $\gamma$ \`e una data curva regolare con normale $\vect{n}$, $\frac{\partial u}{\partial n}=\vect{n}\cdot \nabla u$.
+dove $\phi$, $\psi$ sono funzioni assegnate e $\gamma$ \`e una data curva regolare con normale $\vect{n}$, \mbox{$\frac{\partial u}{\partial n}=\vect{n}\cdot \nabla u$}.
+\begin{center}
+\includegraphics[width=0.4\textwidth]{immagini/curva1}
+\end{center}
 
-%immagine curva regolare con normale%
-
-Possibile modo di tentare di risolvere il problema: supporre che le $a_{ij}$, la $\gamma$ e i dati $\Phi$, $\Psi$ siano analitici e cercare:
+Possibile modo di tentare di risolvere il problema: supporre che le $a_{ij}$, la $\gamma$ e i dati $\phi$, $\psi$ siano analitici e cercare:
 \begin{enumerate}[label=(\roman*)]
 \item di calcolare tutte le derivate di $u$ su $\gamma$
 \item di dimostrare che lo sviluppo di Taylor di $u$ \`e convergente in un intorno di $\gamma$.
 \end{enumerate}
 Se il procedimento ha successo si \`e costruita una soluzione analitica.
 
+\smallskip
+
 Questo \`e l'obiettivo del \emph{teorema di Cauchy-Kowalevski}: 
 
-Se i coefficienti $a_{ij}$, $b_i$, c, d sono tutti analitici in un dominio $D$, se la curva $\gamma \subset D$ \`e analitica e i dati di Cauchy $\Phi$, $\Psi$ sono analitici in $D$, il problema di Cauchy \eqref{2.105}, con dati iniziali \eqref{2.109}, ammette una e una sola soluzione analitica in un opportuno intorno $I\subset D$ di $\gamma$, purch\'e la normale $\vect{n}$ a $\gamma$ verifichi la condizione 
+Se i coefficienti $a_{ij}$, $b_i$, $c$, $d$ sono tutti analitici in un dominio $D$, se la curva $\gamma \subset D$ \`e analitica e i dati di Cauchy $\phi$, $\psi$ sono analitici in $D$, il problema di Cauchy \eqref{2.105}, con dati iniziali \eqref{2.109}, ammette una e una sola soluzione analitica in un opportuno intorno $I\subset D$ di $\gamma$, purch\'e la normale $\vect{n}$ a $\gamma$ verifichi la condizione 
 \begin{equation}
 \vect{n}\cdot A \vect{n}\neq 0
 \label{2.110}
 \end{equation}
 (senza dim.)
 
+\smallskip
+
 $\rightarrow$ la \eqref{2.110} chiama in causa la classificazione.
 Il ruolo della \eqref{2.110} \`e quello di consentire il calcolo delle derivate seconde:
 \[
-\vect{n}\equiv (\alpha,\beta)
+\vect{n}\equiv (\alpha,\beta) \qquad \alpha^2 + \beta^2 =1
 \]
-
-%immagine derivata tangenzialmente gamma%
+\begin{center}
+\includegraphics[width=0.4\textwidth]{immagini/curva2}
+\end{center}
 
 Deriva tangenzialmente il primo dato di Cauchy:
 \[
-\left.\frac{\partial u}{\partial \tau}\right|_{\gamma} = \left. \frac{\partial \Phi}{\partial \tau}\right|_{\gamma}, \qquad
+\left.\frac{\partial u}{\partial \tau}\right|_{\gamma} = \left. \frac{\partial \phi}{\partial \tau}\right|_{\gamma}, \qquad
 \frac{\partial}{\partial \tau} \equiv \vect{\tau}\cdot \nabla, \qquad 
 \vect{\tau}= (-\beta,\alpha), \qquad 
-\alpha^2 + \beta^2 =1
+\vect{n} \cdot \vect{\tau} = 0
 \]
 \begin{equation}
-\Rightarrow (-\beta u_x +\alpha u_y) \big|_{\gamma}=\left.\frac{\partial \Phi}{\partial \tau}\right|_{\gamma}
+\Rightarrow (-\beta u_x +\alpha u_y) \big|_{\gamma}=\left.\frac{\partial \phi}{\partial \tau}\right|_{\gamma}
 \label{2.111}
 \end{equation}
 Secondo dato di Cauchy:
 \begin{equation}
-(\alpha u_x + \beta u_y) \big|_{\gamma} = \Psi|_{\gamma}
+(\alpha u_x + \beta u_y) \big|_{\gamma} = \psi |_{\gamma}
 \label{2.112}
 \end{equation}
 \`E un sistema lineare non omogeneo in $u_x$ e $u_y$.
-La matrice dei coefficienti \`e $\left( \begin{matrix} -\beta & \alpha \\ \alpha & \beta \end{matrix} \right)$ che ha sempre determinante$\neq0$
 
-$\rightarrow$ \eqref{2.111}, \eqref{2.112} $\underset{\alpha^2 + \beta^2 \neq 0}{\implies} u_x \big|_{\gamma}=p_0(s)$
+La matrice dei coefficienti \`e $\left( \begin{matrix} -\beta & \alpha \\ \alpha & \beta \end{matrix} \right)$ che ha sempre $\det\neq0$
+
+Dalla \eqref{2.111} e \eqref{2.112}:
 \begin{equation}
+\Rightarrow \quad 
+\begin{cases}
+u_x \big|_{\gamma}=p_0(s)\\
 u_y \big|_{\gamma}=q_0(s)
+\end{cases}
 \label{2.113}
 \end{equation}
 dove $p_0$, $q_0$ sono espresse tramite i dati e $s$ \`e il parametro naturale su $\gamma$ (lunghezza della curva).
@@ -3132,22 +3186,18 @@ Servono ora le derivate seconde.
 
 Deriva \eqref{2.113} lungo $\gamma$:
 \[
-\vect{\tau}\cdot \nabla u_x \big|_{\gamma}= p_0'(s)
-\]
-\[
+\begin{cases}
+\vect{\tau}\cdot \nabla u_x \big|_{\gamma}= p_0'(s)\\
 \vect{\tau}\cdot \nabla u_y \big|_{\gamma}=q_0'(s)
-\]
-\[
-\Updownarrow
-\]
-\[
+\end{cases}
+\Leftrightarrow \quad
 \begin{cases}
 (-\beta u_{xx} + \alpha u_{xy}) \big|_{\gamma}=p_0'\\
 (-\beta u_{xy} + \alpha u_{yy}) \big|_{\gamma}=q_0'
 \end{cases}
 \]
 
-La parte principale nella \eqref{2.105} \`e esprimibile su $\gamma$ in base ai dati, perch\'e tutti i termini rimanenti sono calcolabili:
+La parte principale della \eqref{2.105} \`e esprimibile su $\gamma$ in base ai dati, perch\'e tutti i termini rimanenti sono calcolabili:
 \[
 (a_{11}u_{xx}+2a_{12}u_{xy}+a_{22}u_{yy}) \big|_{\gamma}=r_0(s)
 \]
@@ -3162,6 +3212,8 @@ a_{11} & 2a_{12} & a_{22}\\
 \end{equation}
 $\Rightarrow$ la condizione \eqref{2.110} consente di calcolare le derivate seconde. Nello stesso modo si calcolano, sempre grazie alla \eqref{2.110}, tutte le derivate successive.
 
+\medskip
+
 Interpretazione geometrica della (negazione della) \eqref{2.110}:
 
 \begin{equation}
@@ -3175,18 +3227,20 @@ Autovalori di $A$: $\underbrace{\lambda_1,\lambda_2}_{\in\R}$; con autovettori o
 \begin{itemize}
 \item Caso ellittico: sempre $\neq 0$.
 \item Caso parabolico: $A\vect{n}=0$ per $\vect{n}$ nell'autospazio corrispondente all'autovalore nullo.
-\item Caso iperbolico: $\vect{n}\cdot A\vect{n} = 0$ per $\frac{\eta_1}{\eta_2}=\pm \sqrt{\left|\frac{\lambda_1}{\lambda_2}\right|}$
+\item Caso iperbolico: $\vect{n}\cdot A\vect{n} = 0$ per ${\eta_1}/{\eta_2}=\pm \sqrt{\left|{\lambda_1}/{\lambda_2}\right|}$
 \end{itemize}
-$\rightarrow$ 2 campi vettoriali
+$\rightarrow$ 2 campi vettoriali:
 \[
-\vect{w}_1 = \sqrt{|\lambda_2|}\vect{\theta}_1 + \sqrt{|\lambda_1|}\vect{\theta}_2, \qquad (\eta_2=\sqrt{|\lambda_1|},\, \eta_1=\sqrt{|\lambda_2|})
+\vect{w}_1 = \sqrt{|\lambda_2|}\,\vect{\theta}_1 + \sqrt{|\lambda_1|}\,\vect{\theta}_2, \qquad (\eta_2=\sqrt{|\lambda_1|},\, \eta_1=\sqrt{|\lambda_2|})
 \]
 \[
-\vect{w}_2 = \sqrt{|\lambda_2|}\vect{\theta}_1 + \sqrt{|\lambda_1|}\vect{\theta}_2, \qquad (\eta_2=\sqrt{|\lambda_1|},\, \eta_1=-\sqrt{|\lambda_2|})
+\vect{w}_2 = \sqrt{|\lambda_2|}\,\vect{\theta}_1 + \sqrt{|\lambda_1|}\,\vect{\theta}_2, \qquad (\eta_2=\sqrt{|\lambda_1|},\, \eta_1=-\sqrt{|\lambda_2|})
 \]
-Curve $\perp$ a questi campi: $\chi_{1,2}(x,y)=\text{cost}$
 
-%immagine curva perp%
+Curve perpendicolari a questi campi: $\chi_{1,2}(x,y)=cost$
+\begin{center}
+\includegraphics[width=0.4\textwidth]{immagini/curva3}
+\end{center}
 
 \[
 \Rightarrow \vect{n} \propto \nabla\chi \Rightarrow (\alpha,\beta) \propto (\chi_x, \chi_y)
@@ -3209,9 +3263,11 @@ $\rightarrow$ equazione di secondo grado per $f'$
 
 Nel caso parabolico ci si riduce ad una sola famiglia, nel caso ellittico non ci sono curve di questo genere.
 
-\medskip
+\smallskip
 
 \underline{Definizione}: Le curve $\chi(x,y)=cost$ soddisfacenti la \eqref{2.116} si chiamano \emph{curve caratteristiche} dell'equazione \eqref{2.105}
+
+\medskip
 
 Esempi:
 \begin{enumerate}[label=(\roman*)]
@@ -3228,7 +3284,9 @@ c^2 u_{xx}-u_{tt}=0, \qquad a_{11}=c^2, \quad a_{12}=0, \quad a_{22}=-1
 \[
 \Rightarrow x-x_0 \pm c(t-t_0)=0 \qquad \text{(cono luce)}
 \]
-%disegno del cono di luce
+\begin{center}
+\includegraphics[width=0.55\textwidth]{immagini/conoluce}
+\end{center}
 \item equazione del calore 
 \[
 \chi u_{xx}- u_t=0
@@ -4799,7 +4857,7 @@ U(t,t_0)=\exp \left(-\frac{i}{\hbar}(t-t_0)H\right)
 \]
 \item $H$ dipende esplicitamente dal tempo ma $[H(t),H(t')]=0$:
 
-(per esempio campo magnetico omogeneo $\vect{B}=B(t)\hat{\vect{e}}_z$)
+(per esempio campo magnetico omogeneo $\vect{B}=B(t)\vect{e}_z$)
 \[
 \Rightarrow U(t,t_0)=\exp \left(-\frac{i}{\hbar}\int_{t_0}^t dt' H(t')\right)
 \]
@@ -5658,7 +5716,7 @@ Se assumiamo $\nu=0$ otteniamo le equazioni di Eulero, che descrivono la dinamic
 \`E possibile esprimere condizioni al contorno all'equazione di Navier-Stokes per descrivere un fluido confinato.
 Una delle pi\`u semplici \`e quella del cosidetto \emph{muro rigido ed impermeabile}, espressa tramite
 \[
-\vect{u}\cdot \hat{\vect{n}}=0=\vect{u}\times \hat{\vect{n}}
+\vect{u}\cdot \vect{n}=0=\vect{u}\times \vect{n}
 \]
 La prima parte esprime l'annullamento sul muro della componente normale della velocit\`a del fluido (da cui l'aggettivo \emph{impermeabile}), mentre la seconda parte riguarda la componente tangenziale (da cui l'aggettivo \emph{rigido} poich\'e non deforma il muro).
 Si tratta chiaramente di un esempio di \emph{condizioni di Dirichlet} in cui chiedo l'annullamento della funzione incognita sul muro.
