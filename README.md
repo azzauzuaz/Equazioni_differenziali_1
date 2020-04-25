@@ -6,4 +6,4 @@ Sono stati prodotti a partire dagli appunti trascritti da Luca Colombo Gomez nel
 
 Senza il loro contributo queste note non esisterebbero.
 
-Invito chiunque a correggere eventuali errori e a migliorare queste dispense, soprattutto chiunque sia a disposizione di materiale più recente, integrando eventuali parti mancanti o che sono state modificate negli anni successivi.
+Invito chiunque a correggere eventuali errori e a migliorare queste dispense, soprattutto chiunque sia in possesso di materiale più recente, integrando eventuali parti mancanti o che sono state modificate negli anni successivi.
