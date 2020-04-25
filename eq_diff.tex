@@ -19,10 +19,6 @@
 \newcommand{\vect}[1]{\boldsymbol{#1}}
 \setlength{\parindent}{0cm}
 
-\title{Appunti del corso di Equazioni Differenziali I}
-\author{raccolti da \\Luca Colombo Gomez}
-\date{AA 2017/2018}
-
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Rn}{\mathbb{R}^n}
 \newcommand{\x}{\boldsymbol{x}}
@@ -37,11 +33,41 @@
 \makeindex
 
 \begin{document}
-\titlepage
-\maketitle
+
+\begin{titlepage}
+\centering
+
+\vspace*{\fill}
+
+\Huge{\bf Appunti del corso di Metodi Matematici della Fisica: Equazioni Differenziali I}
+
+\vspace*{\fill}
+
+\LARGE{Prof.ssa Silke Klemm}
+
+\vspace*{1cm}
+
+\Large{Dipartimento di Fisica, Universit\`a degli Studi di Milano}
+
+\end{titlepage}
+
+\pagenumbering{roman}
+
+\chapter*{}
+Queste note sono state prodotte a partire dagli appunti trascritti da Luca Colombo Gomez nell'anno accademico 2017/2018 e sono stati integrati con gli appunti di Andrea Autieri, che ha seguito il corso nell'anno 2018/2019.
+
+Senza il loro contributo queste note non esisterebbero.
+
+Invito chiunque a correggere eventuali errori e a migliorare queste dispense, soprattutto chiunque sia a disposizione di materiale pi\`u recente, integrando eventuali parti mancanti o che sono state modificate negli anni successivi.
+
+\begin{flushright} Nicol\`o Palazzini \end{flushright}
 
 \tableofcontents
+
 \chapter{Parentesi matematica: distribuzioni e trasformate di Fourier}
+
+\pagenumbering{arabic}
+
 \section{Distribuzioni}
 
 Le \emph{distribuzioni} (o \emph{funzioni generalizzate}) sono degli oggetti che generalizzano le funzioni e le distribuzioni di probabilit\`a.
@@ -651,7 +677,7 @@ cambio variabile: $u=\cos\theta \rightarrow du=-\sin\theta d\theta$
 G(\x)=\frac{1}{\pi}\int du dk \, e^{ik|\x|u}=\int_0^{\infty}\frac{2}{k|\x|\pi}\sin(k|\x|)dk= \frac{1}{|\x|}
 \]
 
-\chapter{Parte core}
+\chapter{}
 
 \section{Equazione del calore}
 
@@ -2589,7 +2615,7 @@ con
 \tilde{\psi}_0(\kk)=\int d^d \y\, e^{-i\kk\cdot \y} \psi_0(\y)
 \]
 \[
-\Rightarrow \psi(\x,t) = \frac{1}{(2\pi)^d}\int d^d \y\, \psi_0(\y) \underbrace{\int d^d\kk\, \exp\Big({i\kk \cdot (\overbrace{\x-\y}^{:=\vect{z}}) - i\chi \kk^2 t}\Big)}_{:=(2\pi)^d G(\z,t)}
+\Rightarrow \psi(\x,t) = \frac{1}{(2\pi)^d}\int d^d \y\, \psi_0(\y) \underbrace{\int d^d\kk\, e^{i\kk \cdot \overbrace{\scriptstyle(\x-\y)}^{:=\vect{z}} - i\chi \kk^2 t}}_{:=(2\pi)^d G(\z,t)}
 \]
 Riscriviamo l'esponente in modo da avere un integrale gaussiano:
 \[
@@ -3214,7 +3240,7 @@ $\Rightarrow$ la condizione \eqref{2.110} consente di calcolare le derivate seco
 
 \medskip
 
-Interpretazione geometrica della (negazione della) \eqref{2.110}:
+Interpretazione geometrica della \eqref{2.110}: %o interpretazione della negazione?
 
 \begin{equation}
 \vect{n}\cdot A\vect{n}=a_{11}\alpha^2+2a_{12}\alpha\beta + a_{22}\beta^2=0
@@ -3234,7 +3260,7 @@ $\rightarrow$ 2 campi vettoriali:
 \vect{w}_1 = \sqrt{|\lambda_2|}\,\vect{\theta}_1 + \sqrt{|\lambda_1|}\,\vect{\theta}_2, \qquad (\eta_2=\sqrt{|\lambda_1|},\, \eta_1=\sqrt{|\lambda_2|})
 \]
 \[
-\vect{w}_2 = \sqrt{|\lambda_2|}\,\vect{\theta}_1 + \sqrt{|\lambda_1|}\,\vect{\theta}_2, \qquad (\eta_2=\sqrt{|\lambda_1|},\, \eta_1=-\sqrt{|\lambda_2|})
+\vect{w}_2 = -\sqrt{|\lambda_2|}\,\vect{\theta}_1 + \sqrt{|\lambda_1|}\,\vect{\theta}_2, \qquad (\eta_2=\sqrt{|\lambda_1|},\, \eta_1=-\sqrt{|\lambda_2|})
 \]
 
 Curve perpendicolari a questi campi: $\chi_{1,2}(x,y)=cost$
@@ -3271,9 +3297,12 @@ Nel caso parabolico ci si riduce ad una sola famiglia, nel caso ellittico non ci
 
 Esempi:
 \begin{enumerate}[label=(\roman*)]
-\item equazione d'onda in 1+1 dimensioni
+\item equazione dell'onda in 1+1 dimensioni
 \[
-c^2 u_{xx}-u_{tt}=0, \qquad a_{11}=c^2, \quad a_{12}=0, \quad a_{22}=-1
+c^2 u_{xx}-u_{tt}=0
+\]
+\[
+a_{11}=c^2, \quad a_{12}=0, \quad a_{22}=-1
 \]
 \[
 \eqref{2.116'}\Rightarrow c^2f'^2 =1 \Rightarrow f=\pm \frac{x}{c} + f_0
@@ -3301,12 +3330,19 @@ c^2 u_{xx}-u_{tt}=0, \qquad a_{11}=c^2, \quad a_{12}=0, \quad a_{22}=-1
 \chi = f_0-t \overset{!}{=} cost \Rightarrow t = cost \quad \text{(retta)}
 \]
 \end{enumerate}
+
+\medskip
+
 Cambiamento di coordinate:
 
-Sia $\xi=\xi(x,y)$, $\eta=\eta(x,y)$ un cambiamento di coordinate con determinante Jacobiano $\neq 0$.
+Sia $\xi=\xi(x,y)$, $\eta=\eta(x,y)$ un cambiamento di coordinate con determinante Jacobiano diverso da zero.
+\[
+\det J=\left| \begin{matrix} \xi_x &\xi_y \\ \eta_x & \eta_y \end{matrix} \right| \neq 0
+\]
 \[
 v(\xi,\eta):=u(x,y)
 \]
+
 Come si trasforma la parte principale della \eqref{2.105}?
 \[
 u_x=v_\xi \xi_x + v_\eta \eta_x
@@ -3325,10 +3361,12 @@ u_{yy}= v_{\xi\xi }\xi_y^2 + 2v_{\xi\eta}\xi_y\eta_y + v_{\eta\eta}\eta_y^2 + v_
 \]
 %\[ \frac{\partial}{\partial x} = \frac{\partial \xi}{\partial x}\frac{\partial}{\partial \xi} + \frac{\partial \eta}{\partial x}\frac{\partial}{\partial \eta} \]
 %\[ \frac{\partial}{\partial y} = \frac{\partial \xi}{\partial y}\frac{\partial}{\partial \xi} + \frac{\partial \eta}{\partial y}\frac{\partial}{\partial \eta} \]
+
 $\rightarrow$ la parte principale della \eqref{2.105} diventa: 
-\[
+\begin{equation}
 \tilde{a}_{11} v_{\xi\xi} + 2 \tilde{a}_{12}v_{\xi\eta} + \tilde{a}_{22}v_{\eta\eta}
-\]
+\label{2.117}
+\end{equation}
 con 
 \[
 \tilde{a}_{11}= a_{11} \xi_x^2 + 2a_{12}\xi_x\xi_y + a_{22} \xi_y^2 = \nabla\xi \cdot A \nabla \xi
@@ -3339,74 +3377,87 @@ con
 \[
 \tilde{a}_{22}= a_{11} \eta_x^2 + 2a_{12}\eta_x\eta_y + a_{22} \eta_y^2 = \nabla \eta \cdot A \nabla \eta
 \]
-\begin{equation}
+\[
 \Rightarrow \tilde{A} = J A J^{-1} \qquad J=\text{Jacobiano} 
-\label{2.117}
-\end{equation}
+\]
 \[
 \Rightarrow \det \tilde{A} = \det A (\det J)^2
 \]
 $\Rightarrow$ le trasformazioni invertibili di coordinate lasciano invariante il carattere dell'equazione.
 
-\underline{Esempio}: Equazione d'onda $c^2u_{xx} - u_{tt}=0$.
+\medskip
 
-Prendi $\xi=x-ct$, $\eta = x+ct$, (coordinate di cono luce) e poni $v(\xi,\eta) = u(x,y)$ 
+\underline{Esempio}: equazione dell'onda
+\[
+c^2u_{xx} - u_{tt}=0
+\]
+Prendi $\xi=x-ct$, $\eta = x+ct$, (coordinate di cono luce) e poni $v(\xi,\eta) = u(x,t)$ 
 
-$\Rightarrow \tilde{A}=\left(\begin{matrix} 0 & 1\\ 1 & 0 \end{matrix}\right)$ e l'equazione diventa $v_{\xi\eta}=0$. 
-
+$\Rightarrow \tilde{A}=\left(\begin{matrix} 0 & 1\\ 1 & 0 \end{matrix}\right)$ e l'equazione diventa
+\[
+v_{\xi\eta}=0
+\]
 $\Rightarrow$ Soluzione generale:
 \[
-v(\xi,\eta)=f(\xi) + g(\eta) \quad \text{(con $f$, $g$ funzioni arbitrarie)}
+v(\xi,\eta)=f(\xi) + g(\eta)
 \]
-Questo puoi farlo solo in 1+1 dimensioni
+(con $f$, $g$ funzioni arbitrarie)
 
-Riduzione alla forma canonica:
+N.B.: Questo puoi farlo solo in 1+1 dimensioni
+
+\medskip
+
+\textbf{Riduzione alla forma canonica}:
 
 forme canoniche:
 \begin{itemize}
 \item[] $u_{xx} + u_{yy} \quad$ ellittica
-\item[] $u_{xx} (- u_t) \quad$ parabolica
+\item[] $u_{xx} \,(-\, u_t) \quad$ parabolica
 \item[] $u_{xx} - u_{tt} \quad$ iperbolica (in alternativa $u_{xt}$)
 \end{itemize}
 N.B.: Costanti come per esempio $c^2$ in $c^2 u_{xx}-u_{tt}$ possono essere riassorbite nella scala delle variabili:
 \[
 c^2 \frac{\partial^2 u}{\partial x^2} \overset{x\to cx}{\longrightarrow} \frac{\partial^2 u}{\partial x^2}
 \]
-Trasformazione di una parte principale generica nella forma canonica:
+
+\emph{Trasformazione di una parte principale generica nella forma canonica}:
 
 \medskip
 
 \emph{Caso iperbolico}:
 
-L'esempio sopra suggerisce di prendere le curve caratteristiche come nuove linee coordinate 
+L'esempio sopra suggerisce di prendere le curve caratteristiche come nuove linee coordinate:
 \[
 \xi=\chi_1(x,y),\quad \eta=\chi_2(x,y)
 \]
 \[
 \eqref{2.117}\Rightarrow \tilde{A} = \left(\begin{matrix}
-\tilde{A}_{11} & \tilde{A}_{12} \\
-\tilde{A}_{21} & \tilde{A}_{22}
+\tilde{a}_{11} & \tilde{a}_{12} \\
+\tilde{a}_{12} & \tilde{a}_{22}
 \end{matrix} \right)\overset{\eqref{2.116}}{=}\left(\begin{matrix}
 0 & *\\
 * & 0
 \end{matrix}\right)
 \]
 
-$\tilde{A}_{11}=a_{11}\chi_{1x}^2 + 2a_{12}\chi_{1x}\chi_{1y} + a_{22}\chi_{1y}^2$
+$\tilde{a}_{11}=a_{11}\chi_{1x}^2 + 2a_{12}\chi_{1x}\chi_{1y} + a_{22}\chi_{1y}^2$
 
-$\tilde{A}_{12}=\tilde{A}_{21}=a_{11}\chi_{1x}\chi_{2x} + a_{12}(\chi_{1x}\chi_{2y} + \chi_{1y}\chi_{2x}) + a_{22}\chi_{1y}\chi_{2y}$
+$\tilde{a}_{12}=a_{11}\chi_{1x}\chi_{2x} + a_{12}(\chi_{1x}\chi_{2y} + \chi_{1y}\chi_{2x}) + a_{22}\chi_{1y}\chi_{2y}$
 
-$\tilde{A}_{22}=a_{11}\chi_{2x}^2 + 2a_{12}\chi_{2x}\chi_{2y} + a_{22}\chi_{2y}^2$
+$\tilde{a}_{22}=a_{11}\chi_{2x}^2 + 2a_{12}\chi_{2x}\chi_{2y} + a_{22}\chi_{2y}^2$
 
 $\rightarrow$ parte principale riconducibile alla forma canonica $u_{xy}$ 
 
-($2 * v_{\xi\eta} + (\text{derivate dell'ordine }\leq1) =0$ dividi per $* \Rightarrow 2v_{\xi \eta}$ per parte principale)
+($2 * v_{\xi\eta} + (\text{derivate dell'ordine }\leq1) =0$. Dividi per $* \Rightarrow 2v_{\xi \eta}$ per parte principale)
 
 \medskip
 
 \emph{Caso parabolico}:
 
-prendi $\xi=x$, $\eta=\chi(x,y)$
+Prendi:
+\[
+\xi=x, \quad \eta=\chi(x,y)
+\]
 \[
 \Rightarrow J=\left(\begin{matrix}
 \xi_x & \xi_y \\
@@ -3417,9 +3468,9 @@ prendi $\xi=x$, $\eta=\chi(x,y)$
 \end{matrix}\right)
 \]
 
-N.B.: $\det A=0 \Rightarrow$ Se uno dei coefficienti $a_{11}, a_{22}$ \`e nullo lo \`e anche $a_{12}$ ($a_{11}a_{22}-a_{12}^2=0$). In tal caso siamo già nella forma canonica.
+N.B.: $\det A=0 \Rightarrow$ Se uno dei coefficienti $a_{11}, a_{22}$ \`e nullo lo \`e anche $a_{12}$ ($a_{11}a_{22}-a_{12}^2=0$). In tal caso siamo gi\`a nella forma canonica.
 
-$\rightarrow $ supponiamo $a_{11}a_{22}>0$ ( non pu\`o essere $<0$, perch\'e $a_{12}^2 = a_{11}a_{22}$).
+$\rightarrow $ Supponiamo $a_{11}a_{22}>0$ (non pu\`o essere $<0$, perch\'e $a_{12}^2 = a_{11}a_{22}$).
 
 Equazione delle caratteristiche \eqref{2.116}:
 \[
@@ -3496,59 +3547,69 @@ e quindi
 \end{cases}
 \label{2.120}
 \end{equation}
-\centerline{\emph{Equazioni di Beltrami}} 
+\centerline{\emph{Equazioni di Beltrami}}
+
+\medskip
 
 Caratterizzano le trasformazioni che conducono la parte principale ad un'espressione proporzionale all'operatore di Laplace. \`E stato dimostrato (risultato non banale) che le \eqref{2.120} ammettono soluzioni nell'intera regione di ellitticit\`a.
 
 N.B.: Le \eqref{2.120} possono essere scritte nella forma:
 \begin{equation}
-\frac{\partial w}{\partial \z}=\mu\frac{\partial w}{\partial z}
+\frac{\partial w}{\partial \overline{z}}=\mu\frac{\partial w}{\partial z}
 \label{2.120'}
 \tag{$\theequation^\prime$}
 \end{equation}
-con $z=x+iy$, $w=\xi+i\eta$, $\mu=\frac{a_{11}+i a_{12} - \sqrt{|\delta|}}{-a_{11}+i a_{12} - \sqrt{|\delta|}}$ (esercizio)
+con
+\[
+z=x+iy, \quad w=\xi+i\eta, \quad \mu=\frac{a_{11}+i a_{12} - \sqrt{|\delta|}}{-a_{11}+i a_{12} - \sqrt{|\delta|}} 
+\]
+(esercizio)%non sono sicuro che mu sia giusto
 
-Commento: Una mappa $w(z,\z)$ che soddisfa la \eqref{2.120'} viene chiamata mappa \emph{quasi-conforme}
+Commento: Una mappa $w(z,\overline{z})$ che soddisfa la \eqref{2.120'} viene chiamata mappa \emph{quasi-conforme}
 
 (Caso particolare $\mu=0$: mappa conforme, $w=w(z)$ funzione olomorfa).
 
 \subsection{La questione della buona posizione del problema di Cauchy}
 
-\underline{Definizione}: Un problema al contorno per un equazione alle derivate parziali di dice \emph{ben posto secondo Hadamard} se possiede una e una sola soluzione ed essa dipende in modo continuo dai dati iniziali.
+\underline{Definizione}: Un problema al contorno per un'equazione alle derivate parziali si dice \emph{ben posto secondo Hadamard} se possiede una e una sola soluzione ed essa dipende in modo continuo dai dati iniziali.
+
+\medskip
 
 Commenti:
 \begin{enumerate}[label=(\roman*)]
 \item L'enunciato corretto di un problema al contorno contiene non soltanto l'equazione differenziale e i dati al contorno, ma anche la prescrizione dello spazio funzionale in cui si cerca la soluzione. Questa scelta \`e in grado di influenzare ad esempio l'unicit\`a.
 
-\item Cosa si intende per dipendenza continua? $\rightarrow$ richiede una metrica nello spazio delle soluzione e una metrica nello spazio dei dati
+\item Cosa si intende per dipendenza continua? $\rightarrow$ richiede una metrica nello spazio delle soluzioni e una metrica nello spazio dei dati
 
 $X$: spazio delle soluzioni, con norma $\| \cdot \|_X$
 
 $Y$: spazio dei dati, con norma $\| \cdot \|_Y$
 \end{enumerate}
-Dipendenza continua significa:
 
-Sia $\{\vect{\delta}_n\}$ successione di dati (ordinabili in un vettore) tale che  $\lim_{n\to\infty} \| \vect{\delta}_n - \vect{\delta}\|_Y=0$ e sia $\{u_n\}$ una successione di soluzioni. $u$: soluzione corrispondente al dato limite $\vect{\delta}$.
+\underline{Definizione}: Sia $\{\vect{\delta}_n\}$ una successione di dati (ordinabili in un vettore) tale che 
+\[
+\lim_{n\to\infty} \| \vect{\delta}_n - \vect{\delta}\|_Y=0
+\]
+e sia $\{u_n\}$ una successione di soluzioni, con $u$ soluzione corrispondente al dato limite $\vect{\delta}$.
 
 Si ha dipendenza continua se:
 \[
-\lim_{n\to \infty}\|u_n - u \|=0
+\lim_{n\to \infty}\|u_n - u \|_X=0
 \]
-$\rightarrow$ Le curve caratteristiche di un'equazione differenziale hanno un ruolo critico nel problema di Cauchy, perch\'e limitano la scelta delle curve portanti i dati.
+
+Le curve caratteristiche di un'equazione differenziale hanno un ruolo critico nel problema di Cauchy, perch\'e limitano la scelta delle curve portanti i dati.
 
 Le equazioni ellittiche sono avvantaggiate dall'assenza di curve caratteristiche?
 
 \`E cos\`i per la questione dell'esistenza e unicit\`a, ma non per la dipendenza continua (idem per le equazioni paraboliche).
 
-\smallskip
+\medskip
 
 N.B.: Dipendenza continua dai dati \`e irrinunciabile per un modello matematico sensato. Infatti i dati sono di solito affetti da errori sperimentali e ci\`o non deve essere causa di un comportamento imprevedibile della soluzione.
 
-\smallskip
+Inoltre la mancanza della dipendenza continua impedisce il calcolo numerico della soluzione a causa della ripercussione incontrollabile degli errori di arrotondamento.
 
-Inoltre: La mancanza della dipendenza continua impedisce il calcolo numerico della soluzione a causa della ripercussione incontrollabile degli errori di arrotondamento.
-
-\smallskip
+\medskip
 
 La non buona posizione del problema di Cauchy per equazioni ellittiche e paraboliche \`e messa in luce dai seguenti esempi:
 \begin{enumerate}[label=(\roman*)]
@@ -3568,28 +3629,34 @@ u_{xx}^{(n)} - u_t^{(n)}=0, \quad u^{(n)}(0,t)=A_n\sin(nt), \quad u_x^{(n)}(0,t)
 \]
 $\rightarrow$ Soluzione: 
 \[
-u^{(n)}(x,t) =\frac{1}{2}A_n\left(e^{\sqrt{\frac{n}{2}}x}\sin\left(nt+\sqrt{\frac{n}{2}}x\right) + e^{-\sqrt{\frac{n}{2}}x}\sin\left(nt-\sqrt{\frac{n}{2}}x\right)\right) 
+u^{(n)}(x,t) =\frac{1}{2}A_n\left[e^{\sqrt{\frac{n}{2}}x}\sin\left(nt+\sqrt{\frac{n}{2}}x\right) + e^{-\sqrt{\frac{n}{2}}x}\sin\left(nt-\sqrt{\frac{n}{2}}x\right)\right]
 \]
 (esercizio)
 
 Prendi per esempio $A_n=n^{-k}$, $k>0$ $\rightarrow$ stesso problema dell'esempio (i)
 \end{enumerate}
 
-\underline{Problema}: Calcolare le derivate di ordine $>2$ nel problema di Cauchy \eqref{2.105}, \eqref{2.109}.
+\medskip
 
-\underline{Soluzione}: Conosciamo su $\gamma$:
+\emph{Problema}: Calcolare le derivate di ordine $>2$ nel problema di Cauchy \eqref{2.105}, \eqref{2.109}.
+
+Soluzione: Conosciamo su $\gamma$:
 \[
-u_{xx}=\omega_{2,0}(s), \quad u_{xy}=\omega_{1,1}(s), \quad u_{yy}=\omega_{0,2}(s)
+u_{xx}=\omega_{2,0}(s), \qquad u_{xy}=\omega_{1,1}(s), \qquad u_{yy}=\omega_{0,2}(s)
 \]
-%\[ \frac{d}{ds}=\bar{t}\cdot \bar{\nabla} = -\beta \partial_x + \alpha \partial_y \]
-%% immagine gamma con n,t
+\begin{center}
+\includegraphics[width=0.4\textwidth]{immagini/curva2}
+\end{center}
 \[
 \vect{n}=\left(\begin{matrix}
 \alpha \\ \beta
-\end{matrix}\right), \qquad \vect{t}=\left(\begin{matrix}
+\end{matrix}\right), \qquad \vect{\tau}=\left(\begin{matrix}
 -\beta \\ \alpha
-\end{matrix}\right), \qquad \alpha^2+\beta^2=1
+\end{matrix}\right),
+\qquad\frac{d}{ds}=\vect{\tau}\cdot \nabla = -\beta \partial_x + \alpha \partial_y, 
+ \qquad \alpha^2+\beta^2=1
 \]
+
 Per calcolare le derivate di ordine 3 faccio le derivate tangenziali:
 \begin{equation}
 \begin{gathered}
@@ -3603,10 +3670,10 @@ Abbiamo cos\`i 3 equazioni per le derivate terze e 4 incognite.
 
 La quarta equazione la otteniamo dall'equazione di partenza: deriva la \eqref{2.105} rispetto a $x$ e tieni conto che termini del tipo $(a_{11,x}u_{xx})|_{\gamma}$ sono noti:
 \[
-\begin{gathered}
-a_{11}u_{xx}+2a_{12}u_{xy}+a_{22}u_{yy}+b_1u_x+b_2u_y+cu=d\\
+a_{11}u_{xx}+2a_{12}u_{xy}+a_{22}u_{yy}+b_1u_x+b_2u_y+cu=d
+\]
+\[
 \Rightarrow a_{11}u_{xxx}|_{\gamma}+a_{11,x}u_{xx}|_{\gamma}+\dots=d_x|_{\gamma}
-\end{gathered}
 \]
 \begin{subequations}
 \begin{equation}
@@ -3614,7 +3681,7 @@ a_{11}u_{xx}+2a_{12}u_{xy}+a_{22}u_{yy}+b_1u_x+b_2u_y+cu=d\\
 \label{2.122.0}
 \tag{\theequation.0}
 \end{equation}
-oppure deriva rispeto a $y$:
+oppure deriva rispetto a $y$:
 \begin{equation}
 \Rightarrow a_{11}u_{xxy} + 2a_{12}u_{xyy} + a_{22}u_{yyy}=r_1^{(3)}(s)
 \label{2.122.1}
@@ -3630,7 +3697,7 @@ J_0^{(3)}=\left|\begin{matrix}
 0 & -\beta & \alpha & 0 \\
 0 & 0 & -\beta & \alpha \\
 a_{11} & 2a_{12} & a_{22} & 0
-\end{matrix}\right| = a_{11}\alpha^3 + 2a_{12}\beta\alpha^2 + a_{22}\alpha\beta^2 = \alpha \vect{n}\cdot A \vect{n}
+\end{matrix}\right| =- a_{11}\alpha^3 - 2a_{12}\alpha^2\beta - a_{22}\alpha\beta^2 = -\alpha \vect{n}\cdot A \vect{n}
 \]
 Per \eqref{2.121}, \eqref{2.122.1} invece: 
 \[
@@ -3639,11 +3706,15 @@ J_1^{(3)}=\left|\begin{matrix}
 0 & -\beta & \alpha & 0 \\
 0 & 0 & -\beta & \alpha \\
 0 & a_{11} & 2a_{12} & a_{22} 
-\end{matrix}\right| = -a_{11}\beta\alpha^2 - 2a_{12}\alpha\beta^2 - a_{22}\beta^3 = -\beta \vect{n}\cdot A \vect{n}
+\end{matrix}\right| = -a_{11}\alpha^2\beta - 2a_{12}\alpha\beta^2 - a_{22}\beta^3 = -\beta \vect{n}\cdot A \vect{n}
 \]
 Siccome $\alpha^2 + \beta^2 =1$, $\vect{n}\cdot A \vect{n}\neq 0$, $J_0^{(3)}$ e $J_1^{(3)}$ non possono essere entrambi nulli.
 
-Derivate di ordine $>3$: Supponiamo note su $\gamma$ le derivate
+\smallskip
+
+Derivate di ordine $>3$:
+
+Supponiamo note su $\gamma$ le derivate
 \[
 \partial_x^{n-i}\partial_y^i u = \omega_{n-i,i} (s)
 \]
@@ -3654,13 +3725,13 @@ Deriviamole tangenzialmente:
 -\beta \partial_x^{n+1-i}\partial_y^{i}u +\alpha \partial_x^{n-i}\partial_y^{i+1}u = \omega'_{n-i,i}(s)
 \label{2.123}
 \end{equation}
-$n+1$ equazioni e $n+2$ incognite: l'equazione mancante (come nel caso precedente) la troviamo applicando alla \eqref{2.105} l'operatore $\partial_x^{n-1-k}\partial_y^k$ $(k=0,\dots,n-1)$ per far comparire le derivate (n+1)-esime:
+$n+1$ equazioni e $n+2$ incognite: l'equazione mancante (come nel caso precedente) la troviamo applicando alla \eqref{2.105} l'operatore $\partial_x^{n-1-k}\partial_y^k$ ($k=0,\dots,n-1$) per far comparire le derivate (n+1)-esime:
 \begin{equation}
 \Rightarrow a_{11}\partial_x^{n+1-k}\partial_y^k u + 2a_{12}\partial_x^{n-k}\partial_y^{k+1}u + a_{22} \partial_x^{n-1-k}\partial_y^{k+2}u = r_k^{(n+1)}(s) 
 \label{2.124}
 \end{equation}
-Troviamo dei determinanti $J_k^{(n+1)}$, che hanno in comune le prime n+1 righe corrispondenti alle eq. \eqref{2.123}
-($k$ indica quale delle \eqref{2.124} abbiamo presa come equazione mancante)
+Troviamo dei determinanti $J_k^{(n+1)}$ che hanno in comune le prime n+1 righe corrispondenti alle eq. \eqref{2.123}
+($k$ indica quale delle \eqref{2.124} abbiamo preso come equazione mancante)
 \[
 \begin{matrix}
 -\beta & \alpha & 0 & 0 & \dots & 0 & 0\\
@@ -3674,26 +3745,26 @@ mentre l'ultima riga (corrispondente a una delle \eqref{2.124}) ha la terna $ a_
 
 Per :
 \[
-\begin{array}{l}
-k=0 : J_0^{(n+1)} = \alpha^{n-1}\vect{n}\cdot A\vect{n}\\
-k=1 : J_1^{(n+1)} = \beta\alpha^{n-2}\vect{n}\cdot A\vect{n}\\
-\dots \\
-k=n-1 : J_{n-1}^{(n+1)} = \beta^{n-1}\vect{n}\cdot A\vect{n}\\
-\end{array}
+\begin{aligned}
+&k=0 : J_0^{(n+1)} = \alpha^{n-1}\vect{n}\cdot A\vect{n}\\
+&k=1 : J_1^{(n+1)} = \beta\alpha^{n-2}\vect{n}\cdot A\vect{n}\\
+&\qquad\qquad\qquad\dots\\
+&k=n-1 : J_{n-1}^{(n+1)} = \beta^{n-1}\vect{n}\cdot A\vect{n}\\
+\end{aligned}
 \]
 Almeno uno \`e diverso da zero.
 
 \section{Classificazione di equazioni differenziali di ordine superiore e in pi\`u variabili}
-%questa sezione è da sapere solo se si vuole il 30 e/o la lode, altrimenti fa niente
 
 Considera l'equazione differenziale:
 \begin{equation}
 \sum_{|j|\leq m}a_j D^j u = f \qquad \text{in } \Rn
 \label{2.125}
 \end{equation}
-dove $ j=(j_1,\dots,j_n)$ multi-indice, $|j| = j_1 + \dots + j_n$
-
-$a_j=a_j(x^1,\dots,x^n)$
+dove $ j=(j_1,\dots,j_n)$ multi-indice, $|j| = j_1 + \dots + j_n$,
+\[
+a_j=a_j(x^1,\dots,x^n),
+\]
 \[
 D^j \equiv \left(\frac{\partial}{\partial x_1}\right)^{j_1} \dots \left(\frac{\partial}{\partial x_n}\right)^{j_n}
 \]
@@ -3720,9 +3791,9 @@ a_{300}(x,y,z)\frac{\partial ^3 u}{\partial x^3} + a_{201}(x,y,z)\frac{\partial 
 
 \medskip
 
-\underline{Definizione}: Una sottovariet\`a di dimensione n-1 ed equazione $S(x^1,\dots, x^n)=0$ viene chiamata \emph{variet\`a caratteristica} dell'equazione differenziale alle derivate parziali se soddisfa l'equazione differenziale del I ordine:
+\underline{Definizione}: Una sottovariet\`a di dimensione $n-1$ ed equazione $S(x^1,\dots, x^n)=0$ viene chiamata \emph{variet\`a caratteristica} dell'equazione differenziale alle derivate parziali se soddisfa l'equazione differenziale del I ordine:
 \begin{equation}
-\sum_{|j| =m} a_j p^j=0 , \qquad p^j=\left(\frac{\partial S}{\partial x_1}\right)^{j_1} \dots \left(\frac{\partial S}{\partial x_n}\right)^{j_n} = p_1^{j_1} \dots p_n^{j_n} 
+\sum_{|j| =m} a_j p^j=0 , \qquad p^j=\left(\frac{\partial S}{\partial x_1}\right)^{j_1} \ldots \left(\frac{\partial S}{\partial x_n}\right)^{j_n} = p_1^{j_1} \ldots p_n^{j_n} 
 \label{2.127}
 \end{equation}
 
@@ -3741,9 +3812,7 @@ a_{20}(x,y)u_{xx}+a_{11}(x,y)u_{xy} + a_{02}(x,y)u_{yy} + a_{10}(x,y)u_x + a_{01
 \]
 (avendo rinominato i coefficienti)
 
-$m=2$: 
-
-parte principale:
+$m=2$: parte principale:
 \[
 a_{20}u_{xx} + a_{11}u_{xy} + a_{02}u_{yy}
 \]
@@ -3753,18 +3822,18 @@ a_{20}\left(\frac{\partial S}{\partial x}\right)^2 + a_{11}\frac{\partial S}{\pa
 \]
 $\rightarrow$ \`e la \eqref{2.116} con $\chi \rightarrow S|_{S(x,y)=0}$
 
-$\Rightarrow$ La variet\`a caratteristica \`e una generalizzazione delle curve caratteristiche.
+$\rightarrow$ La variet\`a caratteristica \`e una generalizzazione delle curve caratteristiche.
 \end{enumerate}
 
-\emph{Problema di Cauchy}: Trovare una soluzione $C^m$ della \eqref{2.125}, la quale, assieme alle sue derivate di ordine $\leq m-1$, assume dei valori fissati su una sottovariet\`a $S$ di dimensione n-1 ed equazione $S(x^1,\dots, x^n)=0$.
+\emph{Problema di Cauchy}: Trovare una soluzione $C^m$ della \eqref{2.125}, la quale, assieme alle sue derivate di ordine $\leq m-1$, assume dei valori fissati su una sottovariet\`a $S$ di dimensione $n-1$ ed equazione $S(x^1,\dots, x^n)=0$.
 
 \medskip
 
-\underline{Esempio}: $n=m=2 \Rightarrow \dim S=1 \rightarrow$ curva sulla quale fissiamo u e la sua derivata prima.
+\underline{Esempio}: $n=m=2 \Rightarrow \dim S=1 \rightarrow$ curva sulla quale fissiamo $u$ e la sua derivata prima.
 
 Il problema viene semplificato dal seguente cambiamento di coordinate:
 \[
-x^{1\prime}=S(x^1,\dots, x^n) \qquad x^{j\prime}=x^j \qquad (j=2,\dots,n)
+x^{1\prime}=S(x^1,\dots, x^n) \qquad x^{j\prime}=x^j \quad (j=2,\dots,n)
 \]
 \[
 \Rightarrow \frac{\partial}{\partial x^i} = \frac{\partial x^{1\prime}}{\partial x^i}\frac{\partial}{\partial x^{\prime}_1}+\sum_{j=2}^n \frac{\partial x^{j\prime}}{\partial x^i}\frac{\partial}{\partial x^{\prime}_j}=p_i\frac{\partial}{\partial x^{\prime}_1} + \sum_{j=2}^n \delta_i^j \frac{\partial}{\partial x^{\prime}_j}
@@ -3774,16 +3843,16 @@ $\Rightarrow$ la \eqref{2.125} diventa:
 \sum_{|j| \leq m} a_j\left(\frac{\partial}{\partial x_1}\right)^{j_1}\left(\frac{\partial}{\partial x_2}\right)^{j_2} \dots \left(\frac{\partial}{\partial x_n}\right)^{j_n}u=f
 \]
 \[
-\left(\frac{\partial}{\partial x_1}\right)^{j_1} \rightarrow p_1\frac{\partial}{\partial x'_1} + \sum_{j=2}^n \delta^j_1 \frac{\partial}{\partial x'_j} = p_1\frac{\partial}{\partial x'_1}
+\frac{\partial}{\partial x_1} \rightarrow p_1\frac{\partial}{\partial x'_1} + \sum_{j=2}^n \delta^j_1 \frac{\partial}{\partial x'_j} = p_1\frac{\partial}{\partial x'_1}
 \]
 \[
-\left(\frac{\partial}{\partial x_2}\right)^{j_2} \rightarrow p_2\frac{\partial}{\partial x'_1} + \sum_{j=2}^n \delta^j_2 \frac{\partial}{\partial x'_j} = p_2\frac{\partial}{\partial x'_1} + \frac{\partial}{\partial x'_2}
+\frac{\partial}{\partial x_2} \rightarrow p_2\frac{\partial}{\partial x'_1} + \sum_{j=2}^n \delta^j_2 \frac{\partial}{\partial x'_j} = p_2\frac{\partial}{\partial x'_1} + \frac{\partial}{\partial x'_2}
 \]
 \[
-\left(\frac{\partial}{\partial x_n}\right)^{j_n} \rightarrow p_m \frac{\partial}{\partial x'_1} + \frac{\partial}{\partial x'_m}
+\frac{\partial}{\partial x_n} \rightarrow p_n \frac{\partial}{\partial x'_1} + \frac{\partial}{\partial x'_n}
 \]
 \begin{equation}
-\Rightarrow \sum_{|j|\leq m} a_j p_1^{j_1}\dots p_n^{j_n}\left(\frac{\partial}{\partial x'_1}\right)^{\overbrace{j_1 + \dots  + j_n}^{|j|}} + \sum_{\underset{j_1<m}{|j|\leq m}}b_j\left(\frac{\partial}{\partial x'_1}\right)^{j_1} \dots \left(\frac{\partial}{\partial x'_n}\right)^{j_n}u=f
+\Rightarrow \sum_{|j|\leq m} a_j p_1^{j_1}\ldots p_n^{j_n}\left(\frac{\partial}{\partial x'_1}\right)^{\overbrace{\scriptstyle j_1 + \ldots  + j_n}^{|j|}} + \sum_{\underset{j_1<m}{|j|\leq m}}b_j\left(\frac{\partial}{\partial x'_1}\right)^{j_1} \ldots \left(\frac{\partial}{\partial x'_n}\right)^{j_n}u=f
 \label{2.128}
 \end{equation}
 Per alleggerire la notazione sopprimo il simbolo $'$ in quello che segue.
@@ -3792,7 +3861,7 @@ Dati di Cauchy per la \eqref{2.128}:
 \begin{equation}
 \left.\frac{\partial^k u}{(\partial x_1)^k}\right|_{x_1=0}=\varphi_k(x_2,\dots, x_n) , \qquad k=0,\dots,m-1
 \label{2.129}
-\end{equation}f
+\end{equation}
 Se le funzioni $\varphi_k$ sono di classe $C^{m-k}$, determinano 
 \begin{equation}
 (D^j u)(0,x_2,\dots,x_n)=\left(\left(\frac{\partial}{\partial x_1}\right)^{j_1}\dots \left(\frac{\partial}{\partial x_n}\right)^{j_n}u\right)(0,x_2,\dots,x_n)
@@ -3802,19 +3871,25 @@ per $|j|\leq m$, $j_1<m$
 
 (deriva la \eqref{2.129} al massimo m-k volte).
 
-Le \eqref{2.130}, attraverso la \eqref{2.128}, determinano $ \frac{\partial^m u}{(\partial x_1)^m} (0,x_2,\dots, x_n) $ se $ \sum_{|j|=m} a_j p^j \neq 0 $, cio\`e se $S$ non \`e una variet\`a caratteristica. 
+Le \eqref{2.130}, attraverso la \eqref{2.128}, determinano
+\[
+\frac{\partial^m u}{(\partial x_1)^m} (0,x_2,\dots, x_n)
+\]
+se
+\[
+\sum_{|j|=m} a_j p^j \neq 0
+\]
+cio\`e se $S$ non \`e una variet\`a caratteristica. 
 
 Se $S$ \`e una variet\`a caratteristica, la \eqref{2.128} valutata in $x_1=0$ d\`a una relazione fra i dati di Cauchy \eqref{2.129}. Su una variet\`a caratteristica i dati di Cauchy non possono essere prescritti indipendentemente!
 
 \medskip
 
-\emph{Teorema di Cauchy-Kowalevski}:
-
-La \eqref{2.125} con $f$ e $\{a_j\}$ analitiche, e dati di Cauchy analitici su una iper-superficie $S$ non caratteristica, ha una e una sola soluzione analitica in un intorno di $S$.
+\underline{Teorema} di \emph{Cauchy-Kowalevski}: La \eqref{2.125} con $f$ e $\{a_j\}$ analitiche, e dati di Cauchy analitici su una iper-superficie $S$ non caratteristica, ha una e una sola soluzione analitica in un intorno di $S$.
 
 \medskip
 
-Classificazione: Le propriet\`a di soluzioni di equazioni differenziali alle derivate parziali dipendono dalla natura delle variabili caratteristiche.
+\emph{Classificazione}: Le propriet\`a di soluzioni di equazioni differenziali alle derivate parziali dipendono dalla natura delle variabili caratteristiche.
 
 $\rightarrow$ seguente classificazione:
 \begin{itemize}
@@ -3861,11 +3936,23 @@ La \eqref{2.125} \`e \emph{$x^1$-parabolica} se pu\`o essere scritta nella forma
 \frac{\partial u}{\partial x_1} - \sum_{\underset{j_1=0}{|j|\leq m}}a_jD^j u=f 
 \label{2.131}
 \end{equation}
-con $\sum_{\underset{j_1=0}{|j| = m}} a_jp^j >0$ $\forall p\neq 0$, cio\`e $\sum_{\underset{j_1=0}{|j|\leq m}} a_jD^j$ è un operatore differenziale ellittico in $\R^{n-1}$.
+con
+\[
+\sum_{\underset{j_1=0}{|j| = m}} a_jp^j >0 \quad \forall p\neq 0
+\]
+cio\`e
+\[
+\sum_{\underset{j_1=0}{|j|\leq m}} a_jD^j
+\]
+\`e un operatore differenziale ellittico in $\R^{n-1}$.
 
 \medskip
 
-Esempio: l'equazione del calore $\frac{\partial u}{\partial t} - \Delta u=0$ \`e \emph{t-parabolica}.
+\underline{Esempio}: L'equazione del calore
+\[
+\frac{\partial u}{\partial t} - \Delta u=0
+\]
+\`e \emph{t-parabolica}.
 
 Le equazioni paraboliche rappresentano una classe importante di equazioni che non sono n\'e ellittiche n\'e iperboliche.
 
@@ -3886,12 +3973,12 @@ p_1^2+p_2^2+p_3^2=0 \Rightarrow \text{ellittica}
 \]
 2 soluzioni reali + 2 soluzioni complesse $\rightarrow$ non rientra in nessuno dei 3 tipi
 
-\section{Le formule di Green} % o "La formula di Green" ?
+\section{La formula di Green} % o "Le formule di Green" ?
 
 Sia $U\subseteq \Rn$ insieme aperto limitato con bordo $C^1$ $\partial U$.
-
-%immagine dell'insieme U
-
+\begin{center}
+\includegraphics[width=0.25\textwidth]{immagini/insiemeu}
+\end{center}
 $u,\varphi$ funzioni $C^2$ in $U$.
 
 \[
@@ -3900,12 +3987,17 @@ $u,\varphi$ funzioni $C^2$ in $U$.
 \[
 \int_{U}u\Delta \varphi d^n x=\underbrace{\int_{U}\sum_{i=1}^n\frac{\partial}{\partial x_i}\left(u\frac{\partial \varphi}{\partial x_i} \right)d^n x}_{ \overset{\text{Gauss}}{=}\int_{\partial U}\sum_i u\frac{\partial \varphi}{\partial x_i}d^{n-1}S_i} - \int_{U} \sum_{i=1}^{n} \frac{\partial u}{\partial x_i}\frac{\partial \varphi}{\partial x_i}d^n x
 \]
-$d^{n-1}S_i=n_i dA \rightarrow$ elemento di \emph{superficie} n-1 dimensionale
+$d^{n-1}S_i=n_i dA \rightarrow$ elemento di \emph{superficie} $n-1$ dimensionale
+
+\medskip
 
 $\Rightarrow$ In forma vettoriale: Gauss
 \[
 \int_U \operatorname{div} (u \operatorname{grad} \varphi) d^n x = \int_{\partial U} u \operatorname{grad} \varphi \cdot d^{n-1} \vect{S}
 \]
+
+\medskip
+
 Per $\varphi=u$
 \begin{equation}
 \int_U u\Delta u d^n x = \int_{\partial U} \sum_i u\frac{\partial u}{\partial x_i}d^{n-1}S_i - \int_{U}\sum_i \left(\frac{\partial u}{\partial x_i}\right)^2 d^n x
@@ -3921,7 +4013,11 @@ Per $\varphi=u$
 
 \medskip
 
-$\Rightarrow$ \emph{Teorema di unicit\`a}: l'equazione differenziale $\Delta u = f$ ha al massimo una soluzione in $C^2(U)$ che assume dei dati valori su $\partial U$.
+\underline{Teorema} di unicit\`a: L'equazione differenziale 
+\[
+\Delta u = f
+\]
+ha al massimo una soluzione in $C^2(U)$ che assume dei dati valori su $\partial U$.
 
 \underline{Dimostrazione}: Siano $v_1$ e $v_2$ soluzioni. Dimostreremo che $u=v_1 - v_2=0$
 \[
@@ -3945,29 +4041,32 @@ u \big|_{\partial U}=0 \Rightarrow u=0 \text{ in }U \qquad \blacksquare
 
 La formula di Green \eqref{2.133} permette di ottenere un'espressione per $ u(\y)$, $\y \in U$, in termini di $\Delta u=f$ in $U$ e di $u$, $\frac{\partial u}{\partial n}$ su $\partial U$.
 
-Nella \eqref{2.133}, poni $\varphi(\x)=-K_n|\x-\y|^{2-n},$ con $K_n= \frac{\Gamma (n/2)}{(n-2)2\pi ^{n/2}}$, $n\neq 2$
-
+Nella \eqref{2.133}, poni
+\[
+\varphi(\x)=-K_n|\x-\y|^{2-n}
+\]
+con
+\[
+K_n= \frac{\Gamma (\frac{n}{2})}{(n-2)2\pi ^\frac{n}{2}}, \quad n\neq 2
+\]
 $\varphi$ \`e $C^\infty$ nell'insieme aperto $\x \neq \y$. 
 
-Per il dominio di integrazione prendiamo $U_\epsilon$, uguale a $U$ senza la palla $B_\epsilon(\y)$ con raggio $\epsilon$ e centro $\y$:
+Per il dominio di integrazione prendiamo $U_\varepsilon$, uguale a $U$ senza la palla $B_\varepsilon(\y)$ con raggio $\varepsilon$ e centro $\y$:
 \[
-U_\epsilon = U \smallsetminus B_\epsilon(\y)
+U_\varepsilon = U \smallsetminus B_\varepsilon(\y)
 \]
-
-%immagine dell'insieme descritto
-
+\begin{center}
+\includegraphics[width=0.35\textwidth]{immagini/insiemeuepsilon}
+\end{center}
 \[
-\eqref{2.133} \Rightarrow \int_{U_\epsilon} \big(u \underbrace{\Delta\varphi}_{0} - \varphi \Delta u\big)d^n x=
+\eqref{2.133} \Rightarrow \int_{U_\varepsilon} \big(u \underbrace{\Delta\varphi}_{0} - \varphi \Delta u\big)d^n x=\int_{\underbrace{\scriptstyle \partial U_\varepsilon}_{\partial U \cup \partial B_\varepsilon}} \sum_i \left( u\frac{\partial \varphi}{\partial x_i} - \varphi \frac{\partial u}{\partial x_i}\right)d^{n-1}S^i
 \]
-$\Delta \varphi = 0$ in $U_\epsilon$ (Esercizio: verificare)
+(Esercizio: verificare che $\Delta \varphi = 0$ in $U_\varepsilon$)
 \[
-=\int_{\underset{\partial U \cup \partial B_\epsilon }{ \partial U_\epsilon}} \sum_i \left( u\frac{\partial \varphi}{\partial x_i} - \varphi \frac{\partial u}{\partial x_i}\right)d^{n-1}S^i
-\]
-\[
-\Rightarrow K_n \underbrace{\int_{U_\epsilon}|\x-\y|^{2-n} \Delta u d^n x}_{\underset{\epsilon \to 0}{\longrightarrow}\int_U |\x - \y|^{2-n}f d^n x}=
+\Rightarrow K_n \underbrace{\int_{U_\varepsilon}|\x-\y|^{2-n} \Delta u \,d^n x}_{\underset{\varepsilon \to 0}{\longrightarrow}\int_U |\x - \y|^{2-n}f d^n x}=
 \]
 \begin{equation}
-=-K_n \int_{\partial U \cup \partial B_\epsilon}\sum_i \left(u\frac{\partial}{\partial x_i}|\x-\y|^{2-n} - |\x-\y|^{2-n}\frac{\partial u}{\partial x_i} \right)d^{n-1}S_i
+=-K_n \int_{\partial U \cup \partial B_\varepsilon}\sum_i \left(u\frac{\partial}{\partial x_i}|\x-\y|^{2-n} - |\x-\y|^{2-n}\frac{\partial u}{\partial x_i} \right)d^{n-1}S_i
 \label{2.134}
 \end{equation}
 
@@ -3983,31 +4082,34 @@ Parentesi:
 
 \medskip
 
-Integrale su $\partial B_\epsilon$:
+Integrale su $\partial B_\varepsilon$:
 \[
--K_n\int_{S^{n-1}_\epsilon}\sum_i\Big(u(2-n) \underbrace{(x_i-y_i)}_{n_i |\x - \y|} |\underbrace{\x - \y}_{\epsilon}|^{-n}-|\x-\y|^{2-n}\frac{\partial u}{\partial x_i}\Big) d^{n-1}S_i=
+-K_n\int_{S^{n-1}_\varepsilon}\sum_i\Big(u(2-n) \underbrace{(x_i-y_i)}_{n_i |\x - \y|} |\underbrace{\x - \y}_{\varepsilon}|^{-n}-|\x-\y|^{2-n}\frac{\partial u}{\partial x_i}\Big) d^{n-1}S_i=
 \]
-$|\x-\y|=\epsilon$ per $\x \in \partial B_\epsilon$
-%$S_\epsilon^{n-1}$ (n-1)-sfera con raggio $\epsilon$ (bordo di $B_\epsilon$)
+$|\x-\y|=\varepsilon$ per $\x \in \partial B_\varepsilon$
+
+$S_\varepsilon^{n-1}$: (n-1)-sfera con raggio $\varepsilon$ (bordo di $B_\varepsilon$)
 
 Vettore normale: $\vect{n}=\frac{\x - \y}{|\x-\y|}$, $|\vect{n}|=1$ (punta verso l'esterno della palla)
 
-%immagine palla B epsilon 
+\begin{center}
+\includegraphics[width=0.3\textwidth]{immagini/bepsilon}
+\end{center}
 
-$d^{n-1}S_i= - n_i dV_\epsilon$ ($dV_\epsilon$: elemento di \emph{superficie} su $S^{n-1}_\epsilon$)
+$d^{n-1}S_i= - n_i dV_\varepsilon$ ($dV_\varepsilon$: elemento di \emph{superficie} su $S^{n-1}_\varepsilon$)
 
-$\rightarrow$ il vettore normale deve puntare verso l'esterno di $U_\epsilon$
-
-%immagine di U epsilon
-
+$\rightarrow$ il vettore normale deve puntare verso l'esterno di $U_\varepsilon$
+\begin{center}
+\includegraphics[width=0.35\textwidth]{immagini/insiemeuepsilon2}
+\end{center}
 \begin{equation}
-=+K_n\int_{S_\epsilon^{n-1}} \sum_i \left(u(2-n)n_i\epsilon^{1-n}-\epsilon^{2-n}\frac{\partial u}{\partial x_i}\right)n_i dV_\epsilon
+=+K_n\int_{S_\varepsilon^{n-1}} \sum_i \left(u(2-n)n_i\varepsilon^{1-n}-\varepsilon^{2-n}\frac{\partial u}{\partial x_i}\right)n_i dV_\varepsilon
 \tag{$\otimes$}
 \label{eqotimes}
 \end{equation}
-$dV_\epsilon = \epsilon^{n-1}dV_1$ ($dV_1$: elemento di \emph{superficie} sulla $S_1^{n-1}$ (raggio 1))
+$dV_\varepsilon = \varepsilon^{n-1}dV_1$ ($dV_1$: elemento di \emph{superficie} sulla $S_1^{n-1}$ (raggio 1))
 \begin{equation}
-\eqref{eqotimes} \underset{\sum_i (n_i)^2=1}{\xrightarrow{\epsilon \to 0} } K_n u(\y)(2-n)\int_{S_1^{n-1}}dV_1=-u(\y)
+\eqref{eqotimes} \underset{\sum_i (n_i)^2=1}{\xrightarrow{\varepsilon \to 0} } K_n u(\y)(2-n)\int_{S_1^{n-1}}dV_1=-u(\y)
 \label{2.135}
 \end{equation}
 $\int_{S_1^{n-1}}dV_1=\frac{2\pi^{n/2}}{\Gamma(n/2)}$: \emph{superficie} della (n-1)-sfera con raggio 1
@@ -4016,19 +4118,21 @@ $\int_{S_1^{n-1}}dV_1=\frac{2\pi^{n/2}}{\Gamma(n/2)}$: \emph{superficie} della (
 
 Parentesi: Volume della palla n-dimensionale e area della $S^{n-1}$
 \[
-B^n(R)=\{(x_1,\dots,x_n)\in \R \,| \,x_1^2 + \dots + x_n^2\leq \R^2\} \quad \text{volume $V_n(R)$}
+B^n(R)=\{(x_1,\dots,x_n)\in \Rn \,| \,x_1^2 + \dots + x_n^2\leq R^2\} \quad \text{volume $V_n(R)$}
 \]
-%immagine bolla raggio R
 \[
-S^{n-1}(R)=\{(x_1,\dots,\x_n)\in\Rn \,|\, x_1 + \dots + x_n^2=R^2 \} \quad \text{area $A_{n-1}(R)$}
+S^{n-1}(R)=\{(x_1,\dots,x_n)\in\Rn \,|\, x_1^2 + \dots + x_n^2=R^2 \} \quad \text{area $A_{n-1}(R)$}
 \]
+\begin{center}
+\includegraphics[width=0.15\textwidth]{immagini/palla2}
+\end{center}
 \begin{equation}
 V_n(R)=\underset{x_1^2 + \ldots + x_n^2 \leq R^2}{\int \ldots \int} dx_1\ldots dx_n = C_n R^n 
 \label{2.136}
 \end{equation}
 $C_n$: coefficienti da calcolare, $R^n$: segue da analisi dimensionale
 
-Posso calcolare $V_n(R)$ sommando infiniti gusci sferici di spessore infinitesimo:
+Possiamo calcolare $V_n(R)$ sommando un numero infinito di gusci sferici di spessore infinitesimo:
 \begin{equation}
 V_n(R)=\int_0^R A_{n-1}(r)dr
 \label{2.137}
@@ -4039,19 +4143,23 @@ V_n(R)=\int_0^R A_{n-1}(r)dr
 \end{equation}
 Uguagliando \eqref{2.136} e \eqref{2.137} e usando la \eqref{2.138} si ottiene:
 \begin{equation}
-\underset{x_1^2 + \cdots + x_n^2 \leq R^2}{\int \dots \int} dx_1\ldots dx_n = n C_n \int_0^R r^{n-1}dr
+\underset{x_1^2 + \ldots + x_n^2 \leq R^2}{\int \ldots \int} dx_1\ldots dx_n = n C_n \int_0^R r^{n-1}dr
 \label{2.139}
 \end{equation}
 In $n$ dimensioni: 
 \begin{equation}
-dx_1 \ldots dx_n=r^{n-1}drd\Omega_{n-1}
+dx_1 \ldots dx_n=r^{n-1}dr\,d\Omega_{n-1}
 \label{2.140}
 \end{equation}
 dove $d\Omega_{n-1} $ contiene la parte angolare.
-
-$n=2$: $d\Omega_1=d\theta$, $n=3$: $d\Omega_2=\sin\theta d\theta d\varphi$, etc... 
-
-(Potremmo definire esplicitamente le n-1 variabili angolari in $n$ dimensioni)
+\[
+\begin{aligned}
+n=2: d\Omega_1&=d\theta \\ 
+n=3: d\Omega_2&=\sin\theta d\theta d\varphi \\
+\dots 
+\end{aligned}
+\]
+(Potremmo definire esplicitamente le $n-1$ variabili angolari in $n$ dimensioni)
 
 Parte sinistra della \eqref{2.139}: integrale in coordinate cartesiane
 
@@ -4099,47 +4207,45 @@ etc...
 
 Torniamo alle identit\`a di Green.
 
-Inserisco \eqref{2.135} in \eqref{2.134} e faccio $\lim_{\epsilon\to 0}$:
+Inserisco \eqref{2.135} in \eqref{2.134} e faccio $\lim_{\varepsilon\to 0}$:
 \[
 K_n\int_U |\x - \y|^{2-n}f(\x)d^nx=-u(\y) - K_n\int_{\partial U}\sum_i \left(u\frac{\partial}{\partial x_i}|\x - \y|^{2-n} - |\x - \y|^{2-n} \frac{\partial u}{\partial x_i} \right)n_i dV
 \]
 ($dV$: elemento di \emph{superficie} indotto su $\partial U$)
 
+Usando $\sum_i n_i \frac{\partial}{\partial x_i}=\vect{n}\cdot\nabla\equiv\frac{\partial}{\partial n}$ ottengo:
 \begin{equation}
 \Rightarrow u(\y)=-K_n\int_U |\x - \y|^{2-n}f(\x) d^n x - K_n\int_{\partial U} \left(u\frac{\partial}{\partial n}|\x - \y|^{2-n} - |\x - \y|^{2-n} \frac{\partial u}{\partial n} \right)dV
 \label{2.144}
 \end{equation}
 \centerline{\emph{Formula generale del potenziale} (III identit\`a di Green)}
 
-%$\Rightarrow$ importante in elettrostatica/dinamica, per esemio da soluzione dell'equazioni di Poisson (u sarebbe il potenziale elettricom integro sul dominio la densità di carica; $\frac{\partial u}{\partial u}$ sarebbe il campo elettrico).\\
+\smallskip
+
+$\rightarrow$ importante in elettrostatica/elettrodinamica, per esempio d\`a la soluzione dell'equazioni di Poisson ($u$ sarebbe il potenziale elettrico, integro sul dominio la densit\`a di carica; $\frac{\partial u}{\partial u}$ sarebbe il campo elettrico).
+
 \medskip
 
 N.B.: Sia $\varphi$ di supporto compatto e $\y=0$
 
 Supponiamo che $\partial U$ sia fuori dall'insieme compatto in cui $\varphi \neq 0$
 \[
-\eqref{2.144} \Rightarrow \varphi(0)=-K_n\int |\x|^{2-n}\Delta \varphi d^n x=<\delta,\varphi>=\int \delta(\x)\varphi(\x)d^n x
+\eqref{2.144} \Rightarrow \varphi(0)=-K_n\int |\x|^{2-n}\Delta \varphi \, d^n x=
 \]
-$\delta(\x)$: delta di Dirac
-
 Integro per parti due volte (non ho contributo di bordo perch\'e $\varphi$ ha supporto compatto)
 \[
-\left[
-\begin{gathered}
-g\Delta\varphi=\operatorname{div} (g\cdot \operatorname{grad}\varphi)-\operatorname{grad} g \operatorname{grad} \varphi \qquad g \leftarrow |\x|^{2-n} \\
-\rightarrow \text{Esercizio: dimostrarlo usando: } g\Delta\varphi=g\sum_{i=1}^n \frac{\partial}{\partial x_i} \frac{\partial}{\partial x_i}\varphi
-\end{gathered}
-\right]
+=-K_n\int \Delta |\x|^{2-n} \varphi(\x) \, d^nx=\int \delta(\x)\varphi(\x) \, d^n x=\braket{\delta,\varphi}
 \]
-
+dove abbiamo usato:
 \[
-\Rightarrow-K_n\int\varphi \Delta |\x|^{2-n}d^nx=\int \varphi(\x)\delta(\x) d^nx
+g\Delta\varphi=\operatorname{div} (g\cdot \operatorname{grad}\varphi)-\operatorname{grad} g \operatorname{grad} \varphi 
 \]
+$|\x|^{2-n} \rightarrow g$ (Esercizio: dimostrarlo usando: $g\Delta\varphi=g\sum_{i=1}^n \frac{\partial}{\partial x_i} \frac{\partial}{\partial x_i}\varphi$)
 \begin{equation}
 \Rightarrow \Delta\big(-K_n|\x|^{2-n}\big)=\delta(\x)
 \label{2.145}
 \end{equation}
-un risultato ottenuto prima con un altro metodo.
+un risultato ottenuto prima con un altro metodo.  %riferimento?
 
 \section{Equazioni differenziali non lineari}
 
@@ -4188,7 +4294,9 @@ Lungo la curva $S=0 \Rightarrow dS=0 $
 \end{aligned}
 \right\}(a,b)\propto (\dot{x},\dot{y})
 \]
-%immagine curva caratteristica con x.,y. e Sx Sy
+\begin{center}
+\includegraphics[width=0.45\textwidth]{immagini/caratteristica}
+\end{center}
 Riparametrizzo la curva per assorbire il fattore di proporzionalit\`a, cio\`e in modo che $(a,b)=(\dot{x},\dot{y})$ 
 
 $\left( \text{N.B. :} \frac{dx}{dt}=\frac{dx}{dt'}\frac{dt'}{dt}\right)$
@@ -5825,7 +5933,7 @@ $\sigma=s+iy$, $-L\leq y \leq L$, $d\sigma=i dy$
 \[
 =\frac{1}{2 \pi i} \int^\infty_0 dx' f(x') e^{s (x-x')} \lim_{L \to \infty} \frac{2 i \sin(L(x-x'))}{x-x'}=
 \]
-$\delta_\epsilon(x)=\frac{1}{\pi x} \sin(\frac{x}{\epsilon})$, $L=\frac{1}{\epsilon}$
+$\delta_\varepsilon(x)=\frac{1}{\pi x} \sin(\frac{x}{\varepsilon})$, $L=\frac{1}{\varepsilon}$
 \[
 =\int_0^\infty dx' f(x') e^{s (x-x')} \delta(x-x')=
 \]
