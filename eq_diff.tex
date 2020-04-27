@@ -58,7 +58,7 @@ Queste note sono state prodotte a partire dagli appunti trascritti da Luca Colom
 
 Senza il loro contributo queste note non esisterebbero.
 
-Invito chiunque a correggere eventuali errori e a migliorare queste dispense, soprattutto chiunque sia a disposizione di materiale pi\`u recente, integrando eventuali parti mancanti o che sono state modificate negli anni successivi.
+Invito chiunque a correggere eventuali errori e a migliorare queste dispense, modificandole e ridistribuendole. In modo particolare invito chiunque sia in possesso di materiale pi\`u recente a integrare eventuali parti mancanti o che sono state modificate negli anni successivi.
 
 \begin{flushright} Nicol\`o Palazzini \end{flushright}
 
@@ -281,10 +281,10 @@ In $N$ dimensioni: coordinate cartesiane $x_1,x_2,\dots,x_n \Rightarrow \delta(\
 
 Propriet\`a utili della delta di Dirac:
 \[
-\delta(-\boldsymbol{r})=\delta(\boldsymbol{r})
+\delta(-\vect{r})=\delta(\vect{r})
 \]
 \begin{equation}
-\int_{\R^n} d^n\vect{r}\,\delta(\underbrace{\vect{r}-\vect{r}'}_{:=\vect{\rho}})f(\boldsymbol{r}) =
+\int_{\R^n} d^n\vect{r}\,\delta(\underbrace{\vect{r}-\vect{r}'}_{:=\vect{\rho}})f(\vect{r}) =
 \int_{\R^n}d^n\vect{\rho}\,\delta(\vect{\rho})f(\vect{\rho}+\vect{r}')=
 f(\vect{\rho}+\vect{r}')\Big |_{ \vect{\rho}=0}  = f(\vect{r}')
 \label{1.7}
@@ -4251,7 +4251,7 @@ un risultato ottenuto prima con un altro metodo.  %riferimento?
 
 \emph{Metodo delle caratteristiche di Lagrange-Charpit}
 
-Considero l'equazione quasi-lineari del I ordine (dipendenza da $U$ ma non dalla derivata):
+Considero l'equazione quasi-lineari del I ordine: %(dipendenza da $U$ ma non dalla derivata)
 \begin{equation}
 a(x,y,u)u_x + b(x,y,u)u_y + c(x,y,u)=0 
 \label{2.146}
@@ -4274,14 +4274,19 @@ Lungo questa curva ho:
 
 La curva $\big(x(t),y(t)\big)$ \`e una curva caratteristica.
 
-\underline{Dimostrazione}: Curve caratteristica $S(x,y)=0$, dove $S$ soddisfa la \eqref{2.127} cio\`e:
+\smallskip
+
+Check: Curva caratteristica $S(x,y)=0$, dove $S$ soddisfa la \eqref{2.127} cio\`e:
 \begin{equation}
 a\frac{\partial S}{\partial x} + b\frac{\partial S}{\partial y}=0
 \label{2.149}
 \end{equation}
 (in questo caso $m=1$, $n=2$, $x_1=x$, $x_2=y$).
 
-Lungo la curva $S=0 \Rightarrow dS=0 $
+Lungo la curva $S=0$ 
+\[
+\Rightarrow dS=0
+\]
 \begin{equation}
 \Rightarrow \frac{\partial S}{\partial x}\dot{x}+\frac{\partial S}{\partial y}\dot{y} =0
 \label{2.150}
@@ -4292,22 +4297,22 @@ Lungo la curva $S=0 \Rightarrow dS=0 $
 \eqref{2.149} \rightarrow (a,b) \perp (S_x,S_y)\\
 \eqref{2.150} \rightarrow (\dot{x},\dot{y}) \perp (S_x,S_y)\\
 \end{aligned}
-\right\}(a,b)\propto (\dot{x},\dot{y})
+\right\}\Rightarrow(a,b)\propto (\dot{x},\dot{y})
 \]
 \begin{center}
 \includegraphics[width=0.45\textwidth]{immagini/caratteristica}
 \end{center}
 Riparametrizzo la curva per assorbire il fattore di proporzionalit\`a, cio\`e in modo che $(a,b)=(\dot{x},\dot{y})$ 
 
-$\left( \text{N.B. :} \frac{dx}{dt}=\frac{dx}{dt'}\frac{dt'}{dt}\right)$
+$\left(\text{N.B.: } \frac{dx}{dt}=\frac{dx}{dt'}\frac{dt'}{dt}\right)$
 
-Le \eqref{2.147} sono soddisfatte. $\qquad \blacksquare$
+Le \eqref{2.147} sono soddisfatte. $\qquad \checkmark$
 
 \medskip
 
 Tutto ci\`o suggerisce un metodo per risolvere la \eqref{2.146}.
 
-Suppongo di avere una curva $\Gamma$ data da $(x_0(s),y_0(s))$ su cui sono definiti dei valori iniziali $u=u_0(s)$.
+Suppongo di avere una curva $\Gamma$ data da $\big(x_0(s),y_0(s)\big)$ su cui sono definiti dei valori iniziali $u=u_0(s)$.
 
 Supponiamo che sulla curva valga:
 \begin{equation}
@@ -4317,7 +4322,7 @@ Supponiamo che sulla curva valga:
 \end{matrix}\right|\neq 0
 \label{2.151}
 \end{equation}
-$\Leftrightarrow \Gamma$ non \`e caratteristica (altrimenti $\nabla S \propto (a,b)$ e potrei riparametrizzare come prima).
+cio\`e $\Gamma$ non \`e caratteristica (altrimenti $\nabla S = (S_x,S_y) \propto (a,b)$ e potrei riparametrizzare come prima).
 
 Ora $\forall s$ risolvo: 
 \begin{equation}
@@ -4341,11 +4346,15 @@ u(t=0,s)=u_0(s) \\
 
 $\rightarrow$ Ho espresso $x,y,u$ in funzione di $t,s$.
 
-\eqref{2.151}(t. f. inversa)${\Rightarrow}$ posso esprimere $t,s$ in funzione di $x,y$ in un intorno di $\Gamma$.
+\smallskip
+
+\eqref{2.151}$\underset{\text{teo. f. inversa}}{\Rightarrow}$ posso esprimere $t,s$ in funzione di $x,y$ in un intorno di $\Gamma$.
 
 Sostituisci il risultato in $u(t,s)\Rightarrow$ Soluzione $u(x,y)$ della \eqref{2.146}
 
-Controllo che questo metodo dia soluzioni della \eqref{2.146}:
+\medskip
+
+Check: Controllo che questo metodo dia soluzioni della \eqref{2.146}:
 \[
 \frac{\partial}{\partial t}u \big(x(t,s),y(t,s) \big)=u_x \frac{\partial x}{\partial t} + u_y \frac{\partial y}{\partial t}\overset{\eqref{2.152}}{=}au_x + bu_y
 \]
@@ -4361,19 +4370,25 @@ Paragonando si ottiene che la \eqref{2.146} \`e soddisfatta. $\checkmark$
 \[
 xu_x + (x+y)u_y = u+1\quad \text{(lineare)}
 \]
-Come curva uso $u(x,0)=x^2$. 
+Come curva uso:
+\[
+u(x,0)=x^2
+\]
 
 Equazioni caratteristiche:
 \[
-\dot{x}(=a)=x; \quad \dot{y}(=b)=x+y; \quad \dot{u}(=-c)=u+1
+\dot{x}=x; \qquad \dot{y}=x+y; \qquad \dot{u}=u+1
 \]
-N.B.: ho trasformato in equazioni differenziali ordinarie, al prezzo di averne 3 al posto di 1.
+N.B.: Ho trasformato in equazioni differenziali ordinarie, al prezzo di averne 3 al posto di 1.
 
 Devo risolvere questo sistema e parametrizzare la curva iniziale.
 
-La curva iniziale pu\`o essere parametrizzata nella forma: $x_0(s)=s, y_0(s)=0, u_0(s)=s^2$. 
+La curva iniziale pu\`o essere parametrizzata nella forma:
+\[
+x_0(s)=s,\quad y_0(s)=0,\quad u_0(s)=s^2
+\]
 
-Check: la curva iniziale non deve essere caratteristica, ovvero non deve rispettare \eqref{2.151}
+Check: La curva iniziale non deve essere caratteristica, ovvero deve rispettare \eqref{2.151}
 \[
 \left|\begin{matrix}
 \frac{dx_0}{ds} & a \\
@@ -4389,15 +4404,17 @@ Integrando l'equazione per $x$, ho:
 \frac{\dot{x}}{x}=1 \Rightarrow \ln x = t + \ln C
 \]
 \[
-x(t=0)\overset{!}{=}x_0(x) =s \Rightarrow C=s \Rightarrow x=se^t
+x(t=0)\overset{!}{=}x_0(s) =s \Rightarrow C=s \Rightarrow x=se^t
 \]
 Poi ho:
 \[
 \dot{y}-y=x=se^t
 \]
 
-La soluzione generale dell'equazione omogenea \`e: $y=Ae^t$
-
+La soluzione generale dell'equazione omogenea \`e:
+\[
+y=Ae^t
+\]
 Per ricavare la soluzione particolare della non omogenea scrivo:
  \[
  y=A(t)e^t \qquad \text{(variazione delle costanti)}
@@ -4405,19 +4422,19 @@ Per ricavare la soluzione particolare della non omogenea scrivo:
  \[
  \Rightarrow \dot{y}=\dot{A}e^t + Ae^t \overset{!}{=} y+se^t = Ae^t + se^t \Rightarrow \dot{A}=s \Rightarrow A=st
  \]
-La soluzione generale dell'equazione non omogenea diventa 
+La soluzione generale dell'equazione non omogenea diventa:
 \[
 y=ce^t + st e^t
 \]
-impongo che 
+impongo che:
 \[
 y(t=0,s)=y_0(s)=0 \Rightarrow c=0 \Rightarrow y=ste^t
 \]
-Infine risolvo
+Infine risolvo:
 \[
 \dot{u}=u+1\Rightarrow \frac{du}{u+1}=dt \Rightarrow \ln(u+1)=t+\ln C \Rightarrow u+1 = Ce^t
 \]
-e impongo le condizioni iniziali 
+e impongo le condizioni iniziali:
 \[
 u(t=0,s)=u_0(s)=s^2 \Rightarrow c-1=s^2 \Rightarrow u=(s^2 + 1)e^t -1
 \]
@@ -4442,13 +4459,13 @@ Curiosit\`a: \`E il contrario di quello che fai in meccanica analitica: Hamilton
 \]
 con $\x = (x_1,\ldots,x_n)$ e i dati iniziali espressi nella forma $\x=\x_0(\vect{s})$, $u=u_0(\vect{s})$ con $\vect{s}=(s_1,\ldots,s_{n-1})$. 
 
-($\Gamma$ \`e una iper-superficie n-1 dimensionale parametrizzata da $s_1,\ldots,s_{n-1}$)
+($\Gamma$ \`e una iper-superficie n-1 dimensionale parametrizzata da $s_1,\ldots,s_{n-1}$) ($\rightarrow$ esercizio!)
 
 \medskip
 
 Ora vorremmo generalizzare questa costruzione al problema non quasi-lineare
 \begin{equation}
-F(x,y,u,p,q)=0 \qquad p=u_x,\, q=u_y
+F(x,y,u,p,q)=0 \qquad p=u_x,\quad q=u_y
 \label{2.154}
 \end{equation}
 Assumiamo che $F$ sia una funzione $C^1$ dei suoi argomenti.
@@ -4460,20 +4477,20 @@ A tal fine poniamo:
 \frac{dx}{dt}=\frac{\partial F}{\partial p}=F_p, \quad \frac{dy}{dt}=\frac{\partial F}{\partial q}=F_q
 \label{2.155}
 \end{equation}
-(Applicando questo alla \eqref{2.146}, cio\`e a $a(x,y,u)p + b(x,y,u)q + c(x,y,u)=0$, d\`a le \eqref{2.152}.)
+(Applicando questo alla \eqref{2.146}, cio\`e a $a(x,y,u)p + b(x,y,u)q + c(x,y,u)=0$, d\`a le \eqref{2.152})
 
 Equazione per $u$:
 \begin{equation}
 \frac{d}{dt}u\big(x(t),y(t)\big) = u_x \frac{dx}{dt}+u_y\frac{dy}{dt}=p F_p + q F_q 
 \label{2.156}
 \end{equation}
-(Applicando alla \eqref{2.146}, questo d\`a $\frac{d}{dt}u\big(x(t),y(t)\big)=-c$, che \`e l'ultima delle \eqref{2.152}.)
+(Applicando alla \eqref{2.146}, questo d\`a $\frac{d}{dt}u\big(x(t),y(t)\big)=-c$, che \`e l'ultima delle \eqref{2.152})
 
 Vorremmo usare \eqref{2.155}, \eqref{2.156} come sistema caratteristico.
 
 \underline{Problema}: Questo sistema (contrariamente alle \eqref{2.152}) non dipende solo da $x,y,u$, ma anche da $u_x$ e $u_y$.
 
-$\rightarrow$ servono delle equazioni per $p=u_x$ e $q=u_y$.
+$\rightarrow$ Servono delle equazioni per $p=u_x$ e $q=u_y$.
 
 Si ha:
 \begin{equation}
@@ -4498,26 +4515,28 @@ In modo molto simile (esercizio)
 \end{equation}
 $\rightarrow$ abbiamo il seguente sistema chiuso di equazioni differenziali ordinarie:
 \begin{equation}
-\begin{cases}
-\frac{dx}{dt}= F_p,\quad \frac{dy}{dt}=F_q, \quad \frac{du}{dt}=pF_p + qF_q,\\
-\frac{dp}{dt}= - p F_u - F_x, \quad \frac{dq}{dt}=-q F_u - F_y 
-\end{cases}
+\begin{gathered}
+\frac{dx}{dt}= F_p,\qquad \frac{dy}{dt}=F_q, \qquad \frac{du}{dt}=pF_p + qF_q,\\
+\frac{dp}{dt}= - p F_u - F_x, \qquad \frac{dq}{dt}=-q F_u - F_y 
+\end{gathered}
 \label{2.160}
 \end{equation}
 \centerline{\emph{Sistema di Lagrange-Charpit}}
 
+\smallskip
+
 $\rightarrow$ seguente metodo per risolvere la \eqref{2.154}:
 
-Sia data una curva $\Gamma$ non caratteristica $(x_0(s),y_0(s))$, assieme a dei valori $u=u_0(s)$ su $\Gamma$.
+Sia data una curva $\Gamma$ non caratteristica $\big(x_0(s),y_0(s)\big)$, assieme a dei valori $u=u_0(s)$ su $\Gamma$.
 Contrariamente al caso quasi-lineare abbiamo bisogno di condizioni iniziali $p=p_0(s)$ e $q=q_0(s)$ per risolvere le \eqref{2.160}. Le condizioni iniziali devono risolvere la \eqref{2.154}: 
 \begin{equation}
 F(x_0,y_0,u_0,p_0,q_0)=0 
 \label{2.161}
 \end{equation}
 Serve un'altra condizione per determinare $p_0$ e $q_0$.
-Per ottenerla, notiamo che la soluzione $u(x,y)$ della \eqref{2.154} soddisfa 
+Per ottenerla, notiamo che la soluzione $u(x,y)$ della \eqref{2.154} soddisfa:
 \[
-\frac{d}{ds}u(x_0(s), y_0(s))=u_x\frac{dx_0}{ds}+u_y\frac{dy_s}{ds}
+\frac{d}{ds}u\big(x_0(s), y_0(s)\big)=u_x\frac{dx_0}{ds}+u_y\frac{dy_s}{ds}
 \]
 $\Rightarrow$ richiediamo che $p_0, q_0$ soddisfino anche
 \begin{equation}
@@ -4525,7 +4544,7 @@ $\Rightarrow$ richiediamo che $p_0, q_0$ soddisfino anche
 \label{2.162}
 \end{equation}
 
-\eqref{2.161} e \eqref{2.162} forniscono le funzioni iniziali $p_0(S)$, $q_0(s)$.
+\eqref{2.161} e \eqref{2.162} forniscono le funzioni iniziali $p_0(s)$, $q_0(s)$.
 
 Richiediamo inoltre
 \begin{equation}
@@ -4545,9 +4564,11 @@ Grazie alla \eqref{2.163} possiamo invertire $x(t,s)$, $y(t,s)$ per ottenere $t(
 
 Sostituito in $u(t,s)$ d\`a una soluzione $u(x,y)$.
 
+\medskip
+
 Dimostriamo che questa ricetta fornisce infatti una soluzione della \eqref{2.154}:
 
-Dimostriamo prima che 
+Dimostriamo prima che:
 \[
 G(t,s) \equiv F\big(x(t,s),y(t,s),u(t,s),p(t,s),q(t,s)\big)=0
 \]
@@ -4561,11 +4582,11 @@ N.B.: $G(0,s)=0$ a causa della \eqref{2.161}
 \[
 \Rightarrow G(t,s)=0
 \]
-Prossimo passo: dobbiamo dimostrare che 
+Prossimo passo: dobbiamo dimostrare che:
 \[
-p(x,y)=\frac{\partial u(x,y)}{\partial x}, \quad q(x,y)=\frac{\partial u(x,y)}{\partial y}
+p(x,y)=\frac{\partial u(x,y)}{\partial x}, \qquad q(x,y)=\frac{\partial u(x,y)}{\partial y}
 \]
-A tal fine dimostriamo che 
+A tal fine dimostriamo che:
 \begin{equation}
 H(t,s)=\frac{\partial u}{\partial s} - p(t,s)\frac{\partial x}{\partial s} - q(t,s) \frac{\partial y}{\partial s} =0 
 \label{2.164}
@@ -4574,10 +4595,10 @@ H(t,s)=\frac{\partial u}{\partial s} - p(t,s)\frac{\partial x}{\partial s} - q(t
 
 N.B.: $H(0,s)=0$ per la \eqref{2.162}
 \[
-\frac{\partial H}{\partial t} = \frac{\partial^2 u}{\partial t \partial s} + \frac{\partial p}{\partial t}\frac{\partial x}{\partial s} - p\frac{\partial^2 x}{\partial t \partial s} + \frac{\partial q}{\partial t}\frac{\partial y}{\partial s} - q\frac{\partial^2 y}{\partial t \partial s}=
+\frac{\partial H}{\partial t} = \frac{\partial^2 u}{\partial t \partial s} - \frac{\partial p}{\partial t}\frac{\partial x}{\partial s} - p\frac{\partial^2 x}{\partial t \partial s} - \frac{\partial q}{\partial t}\frac{\partial y}{\partial s} - q\frac{\partial^2 y}{\partial t \partial s}=
 \]
 \[
-\overset{\eqref{2.160}}{=} \frac{\partial}{\partial s}(pF_p + qF_q) + (F_x pF_u)\frac{\partial x}{\partial s} - p\frac{\partial}{\partial s}F_p + (F_y + qF_u)\frac{\partial y}{\partial s} - q \frac{\partial}{\partial s} F_q =
+\overset{\eqref{2.160}}{=} \frac{\partial}{\partial s}(pF_p + qF_q) + (F_x +pF_u)\frac{\partial x}{\partial s} - p\frac{\partial}{\partial s}F_p + (F_y + qF_u)\frac{\partial y}{\partial s} - q \frac{\partial}{\partial s} F_q =
 \]
 \begin{equation}
 =F_p \frac{\partial p}{\partial s} + F_q \frac{\partial q}{\partial s} + (F_x + pF_u)\frac{\partial x}{\partial s} + (F_y + qF_u)\frac{\partial y}{\partial s}
@@ -4606,7 +4627,7 @@ La soluzione di questa equazione differenziale ordinaria con condizione iniziale
 \Rightarrow H(t,s)=C \underbrace{\exp \left(-\int F_u dt\right)}_{:=h(t,s)}
 \]
 \[
-\Rightarrow H(0,s)= C h(0,s) \overset{!}{=}0 \Rightarrow C=0 \Rightarrow H(t,s)=0 \qquad \blacksquare
+\Rightarrow H(0,s)= C \, h(0,s) \overset{!}{=}0 \Rightarrow C=0 \Rightarrow H(t,s)=0
 \]
 
 \medskip
@@ -4675,19 +4696,17 @@ A volte le equazioni si vedono scritte in questa forma.
 
 \medskip
 
-Generalizzazione al caso di $n$ variabili:
+\emph{Generalizzazione al caso di $n$ variabili}:
 \begin{equation}
 F(x_1,\dots,x_n,u,p_1,\dots,p_n)=0 
 \label{2.169}
 \end{equation}
 (prima $n=2$, $p_1=p$, $p_2=q$, $x_1=x$, $x_2=y$)
 \begin{equation}
-\Rightarrow \begin{cases}
-p_i=\frac{\partial u}{\partial x_i} \\
-\dot{x_i} = F_{p_i} \\
-\dot{p_i}= - p_i F_u -F_{x_i} \\
-\dot{u}=\sum_{i=1}^n p_i F_{p_i}
-\end{cases}
+\Rightarrow\quad \begin{gathered}
+p_i=\frac{\partial u}{\partial x_i}, \qquad \dot{x_i} = F_{p_i}, \\
+\dot{p_i}= - p_i F_u -F_{x_i}, \qquad \dot{u}=\sum_{i=1}^n p_i F_{p_i}
+\end{gathered}
 \label{2.170}
 \end{equation}
 oppure 
@@ -4734,7 +4753,7 @@ p_0^2 - 3q_0^2=u_0=s^2 & \text{(vedi \eqref{2.161})} \\
 \]
 Prendiamo per esempio $q_0=s$
 \[
-\eqref{2.160}: \dot{x}=2p,\; \dot{y}=-6q,\; \dot{u}=2p^2 - 6q^2 = 2(p^2-3q^2)=2u,\; \dot{p}=p,\; \dot{q}=q
+\eqref{2.160}: \dot{x}=2p,\quad \dot{y}=-6q,\quad \dot{u}=2p^2 - 6q^2 = 2(p^2-3q^2)=2u,\quad \dot{p}=p,\quad \dot{q}=q
 \]
 \[
 \dot{u}=2u \Rightarrow u=s^2e^{2t}
@@ -4749,7 +4768,7 @@ Sostituisci nelle equazioni caratteristiche per $x$ e $y$
 \[
 \dot{x}=2p=4se^t \Rightarrow x= 4s(e^t -1) +s
 \]
-Simile:
+In modo simile:
 \[
 y=-6s(e^t -1)
 \]
@@ -4765,12 +4784,12 @@ e^t=1-\frac{y}{6s}=1-\frac{y}{6x+4y}
 \]
 Se avessimo scelto $q_0=-s$, avremmo ottenuto $u=\left(x-\frac{y}{2}\right)^2$
 
-\item $u_x^2 - u_y^2 = x^2 + y^2, \quad u(x,0)=x$
+\item $u_x^2 - u_y^2 = x^2 - y, \quad u(x,0)=x$
 \[
 \Rightarrow F(x,y,u,p,q) = p^2 - q^2 - x^2 + y
 \]
 \[
-F_p=2p,\quad F_q=2q,\quad F_x = -2x,\quad F_y=1,\quad F_u=0
+F_p=2p,\quad F_q=-2q,\quad F_x = -2x,\quad F_y=1,\quad F_u=0
 \]
 \[
 x_0(s)=s,\quad y_0(s)=0,\quad u_0(s)=s 
@@ -4789,7 +4808,7 @@ p_0^2 - q_0^2 = s^2 \\
 \]
 prendi per esempio $q_0=\sqrt{1-s^2}$
 \[
-\eqref{2.160}: \dot{x}=2p,\; \dot{y}=-2q,\; \dot{u}=2p^2 - 2q^2,\; \dot{p}=2x,\; \dot{q}=-1
+\eqref{2.160}: \dot{x}=2p,\quad \dot{y}=-2q,\quad \dot{u}=2p^2 - 2q^2,\quad \dot{p}=2x,\quad \dot{q}=-1
 \]
 \[
 q=-t+\sqrt{1-s^2}
@@ -4798,19 +4817,22 @@ q=-t+\sqrt{1-s^2}
 \dot{y}=-2q=2t-2\sqrt{1-s^2} \Rightarrow y= t^2-2t\sqrt{1-s^2}
 \]
 \[
-\ddot{p}=2\dot{x}=4p \Rightarrow p=Ae^{2t} + Be^{-2t} \Rightarrow \dot{p}=2Ae^{2t}-2Be^{-2t}=2x \Rightarrow x=Ae^{2t}-Be^{-2t}
+\ddot{p}=2\dot{x}=4p \Rightarrow p=Ae^{2t} + Be^{-2t}
 \]
 \[
-p_0=A+B=1, \quad x_0=A-B=s 
+\dot{p}=2Ae^{2t}-2Be^{-2t}=2x \Rightarrow x=Ae^{2t}-Be^{-2t}
 \]
 \[
-\Rightarrow A=\frac{1+s}{2}, \quad B=\frac{1-s}{2}
+\Rightarrow \quad p_0=A+B=1, \quad x_0=A-B=s 
 \]
 \[
-p=\frac{1+s}{2}e^{2t}+\frac{1-s}{2}e^{-2t}, \quad x=\frac{1+s}{2}e^{2t}-\frac{1-s}{2}e^{-2t}
+A=\frac{1+s}{2}, \quad B=\frac{1-s}{2}
 \]
 \[
-\dot{u}=2(p^2-q^2)=2(x^2-y) = \frac{(1+s)^2}{2}e^{4t} - (1-s)^2+\frac{(1-s)^2}{2}e^{-4t}-2t^2 + 4t\sqrt{1-s^2}
+\Rightarrow \quad p=\frac{1+s}{2}e^{2t}+\frac{1-s}{2}e^{-2t}, \quad x=\frac{1+s}{2}e^{2t}-\frac{1-s}{2}e^{-2t}
+\]
+\[
+\dot{u}=2(p^2-q^2)=2(x^2-y) = \frac{(1+s)^2}{2}e^{4t} - (1-s^2)+\frac{(1-s)^2}{2}e^{-4t}-2t^2 + 4t\sqrt{1-s^2}
 \]
 \[
 \Rightarrow u=\frac{(1+s)^2}{8}e^{4t} - t(1-s^2) - \frac{(1-s)^2}{8}e^{-4t}-\frac{2}{3}t^3 + 2t^2\sqrt{1-s^2}+\frac{s}{2}
@@ -4886,7 +4908,10 @@ In modo analogo:
 \eqref{star4}\Rightarrow \ln y = C 2 \sqrt{u} - \ln g(x)
 \]
 \[
-\Rightarrow 2\sqrt{u} = C\ln (xf(y)) = \frac{1}{C}\ln (yg(x)) \Rightarrow C \ln x - \frac{1}{C}\ln g(x) = \frac{1}{C}\ln y - C\ln f(y) :=\underbrace{\ln a}_{cost}
+\Rightarrow 2\sqrt{u} = C\ln \big(xf(y)\big) = \frac{1}{C}\ln \big(yg(x)\big)
+\]
+\[
+\Rightarrow C \ln x - \frac{1}{C}\ln g(x) = \frac{1}{C}\ln y - C\ln f(y) :=\underbrace{\ln a}_{cost}
 \]
 \[
 \ln \frac{x^C}{g(x)^\frac{1}{C}}=\ln a, \qquad \ln \frac{y^\frac{1}{C}}{f(y)^C} = \ln a
@@ -4895,38 +4920,45 @@ In modo analogo:
 g(x)=\frac{x^{C^2}}{a^C}, \qquad f(y)=\frac{y^\frac{1}{C^2}}{a^\frac{1}{C}}
 \]
 \[
-\Rightarrow 2\sqrt{u}=\frac{1}{C} (\ln y + \ln g(x)) = \frac{1}{C}(\ln y + C^2 \ln x - C \ln a)
+\Rightarrow 2\sqrt{u}=\frac{1}{C} \big(\ln y + \ln g(x)\big) = \frac{1}{C}(\ln y + C^2 \ln x - C \ln a)
 \]
 \[
 \Rightarrow u=\frac{1}{4}\left(C\ln x + \frac{1}{C}\ln y + b\right)^2
 \]
 $\rightarrow$ i dati iniziali sono contenuti nelle due costanti di integrazione.
 \end{enumerate}
+
 Commento: equazioni di Hamilton-Jacobi
 \[
-\underset{\text{tempo}}{\frac{\partial S}{\partial x_1}}+H \Big(\underbrace{x_2,\dots,x_n}_\text{coord. spaziali}; \underbrace{\frac{\partial S}{\partial x_2}, \dots,\frac{\partial S}{\partial x_n}}_\text{impulsi}; x_1 \Big)=0
+\frac{\partial \mathcal{S}}{\partial x_1}+\mathcal{H} \left(x_2,\dots,x_n; \frac{\partial \mathcal{S}}{\partial x_2}, \dots,\frac{\partial \mathcal{S}}{\partial x_n}; x_1 \right)=0
 \]
-$S$: funzione principale di Hamilton, corrisponde a $F= p_1 + H(x_1,x_2,\dots,x_n;p_2,\dots,p_n)$
+$x_1$: tempo, $x_i$: coordinate spaziali, $\frac{\partial \mathcal{S}}{\partial x_i}$: impulsi, con $i=2,\ldots,n$
+
+$\mathcal{S}$: funzione principale di Hamilton, corrisponde a $F= p_1 + \mathcal{H}(x_1,x_2,\dots,x_n;p_2,\dots,p_n)$
 \[
-\Rightarrow F_{p_1}=1,\quad F_{p_j}=\frac{\partial H}{\partial p_j} \; (j=2,\dots,n), \quad F_{x_i}=\frac{\partial H}{\partial x_i} \; (i=1,\dots,n), \quad F_u=0 \; (u\equiv S)
+\Rightarrow \quad
+\begin{gathered}
+F_{p_1}=1,\qquad F_{p_j}=\frac{\partial \mathcal{H}}{\partial p_j} \quad (j=2,\dots,n),\\
+\qquad F_{x_i}=\frac{\partial \mathcal{H}}{\partial x_i} \quad (i=1,\dots,n), \quad F_u=0
+\end{gathered}
+\qquad (u\equiv S)
 \]
 \[
-\eqref{2.170} \Rightarrow \dot{x}_1=1,\quad \dot{p}_1=-F_{x_1}-p_1F_u = -\frac{\partial H}{\partial x_1}
+\eqref{2.170} \Rightarrow \quad
+\begin{gathered}
+\dot{x}_1=1,\qquad \dot{p}_1=-F_{x_1}-p_1F_u = -\frac{\partial \mathcal{H}}{\partial x_1}, \\
+ \dot{x}_j=\frac{\partial \mathcal{H}}{\partial p_j} \quad (j=2,\dots,n), \qquad \dot{p}_j=-F_{x_j}-p_jF_u=-\frac{\partial \mathcal{H}}{\partial x_j} \quad ( j=2,\dots,n)
+\end{gathered}
 \]
-\[
-\left.\begin{matrix}
-\dot{x}_j=\frac{\partial H}{\partial p_j}, & j=2,\dots,n \\
-\dot{p}_j=-F_{x_j}-p_jF_u=-\frac{\partial H}{\partial x_j} & j=2,\dots,n
-\end{matrix}\right\} \text{equazioni canoniche di Hamilton}
-\]
+\centerline{Equazioni canoniche di Hamilton}
 \[
 \dot{u}=\underbrace{p_1}_{-H} \underbrace{F_{p_1}}_{1} + \sum_{j=2}^n p_j \underbrace{F_{p_j}}_{\frac{\partial H}{\partial p_j}=\dot{x}_j}
 \]
 \[
-\Rightarrow \dot{u}=-H + \sum_{j=2}^n p_j\dot{x}_j=L \quad \text{(Lagrangiana)}
+\Rightarrow \dot{u}=-H + \sum_{j=2}^n p_j\dot{x}_j=\mathcal{L} \quad \text{(Lagrangiana)}
 \]
 \[
-\Rightarrow u=\int L dt \quad \text{(azione)}
+\Rightarrow u=\int \mathcal{L}\, dt \quad \text{(azione)}
 \]
 
 \section{L'esponenziale ordinato cronologicamente}
