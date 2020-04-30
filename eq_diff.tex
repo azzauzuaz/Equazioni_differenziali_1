@@ -51,6 +51,8 @@
 
 \end{titlepage}
 
+\newpage\null\thispagestyle{empty}\newpage
+
 \pagenumbering{roman}
 
 \chapter*{}
@@ -99,7 +101,9 @@ Questa \`e la definizione di una distribuzione.
 
 Le distribuzioni possono essere moltiplicate con dei numeri reali, e possono essere sommate $\rightarrow$ formano uno spazio vettoriale reale.
 
-\paragraph{Derivata di una distribuzione}
+\medskip
+
+\textbf{Derivata di una distribuzione}
 
 Considera prima il caso di una funzione $f:\R \rightarrow \R$ differenziabile. Se $\phi$ \`e una funzione test, abbiamo:
 \[
@@ -214,7 +218,9 @@ Hint:
 \item Applica la $\delta\big(g(x)\big)$ alla funzione di test $\phi$
 \end{itemize}
 
-\paragraph{Rappresentazione della delta}
+\medskip
+
+\textbf{Rappresentazione della delta}
 \[
 \delta(x) = \lim_{a\to 0} \delta_a(x),
 \]
@@ -861,13 +867,15 @@ e la \eqref{2.11} implica:
 \lim_{t\to 0}T(\x,t)=\int d^d\y \lim_{t\to 0}G(\x-\y,t)T_0(\y)=\int d^d \y\,\delta(\x-\y)T_0(\y)=T_0(\x) \qquad \blacksquare
 \]
 
-\paragraph{Flusso di calore con produzione di calore}
+\medskip
+
+\textbf{Flusso di calore con produzione di calore}
 \[
 \frac{\partial T}{\partial t} -\chi\Delta T=S(\x,t) \qquad t>0
 \]
 $S$ \`e il termine di sorgente, rende l'equazione lineare non omogenea.
 
-\medskip
+\smallskip
 
 Soluzione particolare dell'equazione non omogenea:
 
@@ -1003,7 +1011,9 @@ T(\x,t)=T_\text{p}(\x,t)+T_\text{om}(\x,t)
 
 Se $S(\x',t')=0$ per $t'<0$ $\Rightarrow T_p(\x,0)=0$ e quindi abbiamo che $T(\x,0)=T_\text{om}(\x,0)=T_0(\x)$.
 
-\paragraph{Equazione del calore con bordo}
+\medskip
+
+\textbf{Equazione del calore con bordo}
 
 Considera il problema di Dirichlet in un dominio connesso (o su una variet\`a con bordo) $U$.
 \[
@@ -2944,10 +2954,10 @@ cio\`e basta escludere $n_0$ dalla somma e sostituirci questo.
 \section{Classificazione delle equazioni differenziali alle derivate parziali lineari del secondo ordine}
 
 Per semplicit\`a ci limitiamo alle equazioni in 2 variabili
-\begin{equation}
-a_{11}(x,y)u_{xx} + 2a_{12}(x,y)u_{xy} + a_{22}(x,y)u_{yy} + b_{1}(x,y)u_{x} + b_2(x,y)u_y + c(x,y)u = d(x,y)
+\begin{multline}
+a_{11}(x,y)u_{xx} + 2a_{12}(x,y)u_{xy} + a_{22}(x,y)u_{yy} + b_{1}(x,y)u_{x} + b_2(x,y)u_y + c(x,y)u =\\= d(x,y)
 \label{2.105}
-\end{equation}
+\end{multline}
 
 La classificazione \`e basata solo sulla parte contenente le derivate seconde, $a_{11}u_{xx} + 2a_{12}u_{xy} +a_{22}u_{yy}$, detta \emph{parte principale} dell'equazione.
 
@@ -4209,15 +4219,16 @@ Torniamo alle identit\`a di Green.
 
 Inserisco \eqref{2.135} in \eqref{2.134} e faccio $\lim_{\varepsilon\to 0}$:
 \[
-K_n\int_U |\x - \y|^{2-n}f(\x)d^nx=-u(\y) - K_n\int_{\partial U}\sum_i \left(u\frac{\partial}{\partial x_i}|\x - \y|^{2-n} - |\x - \y|^{2-n} \frac{\partial u}{\partial x_i} \right)n_i dV
+K_n\int_U |\x - \y|^{2-n}f(\x)d^nx=-u(\y) - K_n\int_{\partial U}\sum_i \left(u\frac{\partial}{\partial x_i}|\x - \y|^{2-n} - |\x - \y|^{2-n} \frac{\partial u}{\partial x_i} \right)n_i \,dV
 \]
 ($dV$: elemento di \emph{superficie} indotto su $\partial U$)
 
 Usando $\sum_i n_i \frac{\partial}{\partial x_i}=\vect{n}\cdot\nabla\equiv\frac{\partial}{\partial n}$ ottengo:
-\begin{equation}
-\Rightarrow u(\y)=-K_n\int_U |\x - \y|^{2-n}f(\x) d^n x - K_n\int_{\partial U} \left(u\frac{\partial}{\partial n}|\x - \y|^{2-n} - |\x - \y|^{2-n} \frac{\partial u}{\partial n} \right)dV
+\begin{multline}
+\Rightarrow u(\y)=-K_n\int_U |\x - \y|^{2-n}f(\x) d^n x \,+\\
+- K_n\int_{\partial U} \left(u\frac{\partial}{\partial n}|\x - \y|^{2-n} - |\x - \y|^{2-n} \frac{\partial u}{\partial n} \right)dV
 \label{2.144}
-\end{equation}
+\end{multline}
 \centerline{\emph{Formula generale del potenziale} (III identit\`a di Green)}
 
 \smallskip
@@ -4928,20 +4939,22 @@ g(x)=\frac{x^{C^2}}{a^C}, \qquad f(y)=\frac{y^\frac{1}{C^2}}{a^\frac{1}{C}}
 $\rightarrow$ i dati iniziali sono contenuti nelle due costanti di integrazione.
 \end{enumerate}
 
-Commento: equazioni di Hamilton-Jacobi
+Commento: Equazioni di Hamilton-Jacobi
 \[
 \frac{\partial \mathcal{S}}{\partial x_1}+\mathcal{H} \left(x_2,\dots,x_n; \frac{\partial \mathcal{S}}{\partial x_2}, \dots,\frac{\partial \mathcal{S}}{\partial x_n}; x_1 \right)=0
 \]
-$x_1$: tempo, $x_i$: coordinate spaziali, $\frac{\partial \mathcal{S}}{\partial x_i}$: impulsi, con $i=2,\ldots,n$
+$x_1$: coordinata temporale, $x_i$: coordinate spaziali, $\frac{\partial \mathcal{S}}{\partial x_i}$: impulsi, con $i=2,\ldots,n$
 
-$\mathcal{S}$: funzione principale di Hamilton, corrisponde a $F= p_1 + \mathcal{H}(x_1,x_2,\dots,x_n;p_2,\dots,p_n)$
+$\mathcal{S}$: funzione principale di Hamilton
+\[
+F= p_1 + \mathcal{H}(x_1,x_2,\dots,x_n;p_2,\dots,p_n)
+\]
 \[
 \Rightarrow \quad
 \begin{gathered}
 F_{p_1}=1,\qquad F_{p_j}=\frac{\partial \mathcal{H}}{\partial p_j} \quad (j=2,\dots,n),\\
-\qquad F_{x_i}=\frac{\partial \mathcal{H}}{\partial x_i} \quad (i=1,\dots,n), \quad F_u=0
+F_{x_i}=\frac{\partial \mathcal{H}}{\partial x_i} \quad (i=1,\dots,n), \qquad F_u=0 \quad (u\equiv S)
 \end{gathered}
-\qquad (u\equiv S)
 \]
 \[
 \eqref{2.170} \Rightarrow \quad
@@ -4952,10 +4965,7 @@ F_{p_1}=1,\qquad F_{p_j}=\frac{\partial \mathcal{H}}{\partial p_j} \quad (j=2,\d
 \]
 \centerline{Equazioni canoniche di Hamilton}
 \[
-\dot{u}=\underbrace{p_1}_{-H} \underbrace{F_{p_1}}_{1} + \sum_{j=2}^n p_j \underbrace{F_{p_j}}_{\frac{\partial H}{\partial p_j}=\dot{x}_j}
-\]
-\[
-\Rightarrow \dot{u}=-H + \sum_{j=2}^n p_j\dot{x}_j=\mathcal{L} \quad \text{(Lagrangiana)}
+\dot{u}=p_1 F_{p_1} + \sum_{j=2}^n p_j F_{p_j} = p_1+ \sum_{j=2}^n p_j \frac{\partial \mathcal{H}}{\partial p_j}=-\mathcal{H}+\sum_{j=2}^n p_j \dot{x}_j=\mathcal{L} \quad \text{(Lagrangiana)}
 \]
 \[
 \Rightarrow u=\int \mathcal{L}\, dt \quad \text{(azione)}
@@ -4969,7 +4979,7 @@ Vogliamo risolvere
 i\hbar \frac{d}{dt}\psi = H \psi 
 \label{2.171a}
 \end{equation}
-che include equazioni difficili matriciali del tipo 
+che include difficili equazioni matriciali del tipo 
 \begin{equation}
 \dot{\x}(t)=A(t)\x(t)
 \label{2.171b}
@@ -5007,10 +5017,10 @@ U(t,t_0)=\exp \left(-\frac{i}{\hbar}(t-t_0)H\right)
 
 Riscrivi la \eqref{2.173} come equazione integrale:
 \begin{equation}
-U(t,t_0) = I - \frac{i}{\hbar}\int_{t_0}^t dt' H(t')U(t',t_0)
+U(t,t_0) = \mathbb{I} - \frac{i}{\hbar}\int_{t_0}^t dt' H(t')U(t',t_0)
 \label{2.174}
 \end{equation}
-($\rightarrow$ condizione iniziale $U(t,t_0)=1$ già implementata).
+($\rightarrow$ condizione iniziale $U(t_0,t_0)=\mathbb{I}$ gi\`a implementata).
 
 Risolvi la \eqref{2.174} iterativamente: 
 
@@ -5019,14 +5029,14 @@ Sostituisci il membro destro in s\'e stesso:
 \begin{gathered}
 \Rightarrow U(t,t_0)=\sum_{n=0}^\infty U^{(n)}(t,t_0)\\
 U^{(n)}(t,t_0)=-\frac{i}{\hbar}\int dt' H(t') U^{(n-1)}(t',t_0)\\
-u^{(0)}(t,t_0)=I
+U^{(0)}(t,t_0)=\mathbb{I}
 \end{gathered} 
 \label{2.175}
 \end{equation}
 
-$\rightarrow$ relazione di ricorrenza, risolta da
+$\rightarrow$ relazione di ricorrenza, risolta da:
 \begin{equation}
-U^{(n)}(t,t_0)=\left(-\frac{i}{\hbar}\right)^n\int_{t_0}^tdt_1 \int_{t_0}^{t_1}dt_2 \ldots \int_{t_0}^{t_{n-1}}dt_n H(t_1)H(t_2) \ldots H(t_n)
+U^{(n)}(t,t_0)=\left(-\frac{i}{\hbar}\right)^n\int_{t_0}^tdt_1 \int_{t_0}^{t_1}dt_2 \ldots \int_{t_0}^{t_{n-1}}dt_n\, H(t_1)H(t_2) \ldots H(t_n)
 \label{2.176}
 \end{equation}
 \end{enumerate}
@@ -5037,21 +5047,23 @@ N.B.:\begin{enumerate}
 \end{enumerate}
 Lo sviluppo 
 \begin{equation}
-U(t,t_0)=1+\sum_{n=1}^\infty \left(-\frac{i}{\hbar}\right)^n \int_{t_0}^tdt_1 \int_{t_0}^{t_1}dt_2 \ldots \int_{t_0}^{t_{n-1}}dt_n H(t_1)\ldots H(t_n)
+U(t,t_0)=\mathbb{I}+\sum_{n=1}^\infty \left(-\frac{i}{\hbar}\right)^n \int_{t_0}^tdt_1 \int_{t_0}^{t_1}dt_2 \ldots \int_{t_0}^{t_{n-1}}dt_n\, H(t_1)\ldots H(t_n)
 \end{equation}
 si chiama \emph{serie di Dyson}.
 
 \emph{L'esponenziale ordinato cronologicamente} \`e definito da:
-\begin{equation}
-T\exp\left(-\frac{i}{\hbar}\int_{t_0}^t dt' H(t')\right):=1+\sum_{n=1}^\infty \left(-\frac{i}{\hbar}\right)^n \int_{t_0}^tdt_1 \int_{t_0}^{t_1}dt_2 \ldots \int_{t_0}^{t_{n-1}}dt_n H(t_1)\ldots H(t_n) = U(t,t_0)
+\begin{multline}
+T\exp\left(-\frac{i}{\hbar}\int_{t_0}^t dt' H(t')\right):=\\
+=\mathbb{I}+\sum_{n=1}^\infty \left(-\frac{i}{\hbar}\right)^n \int_{t_0}^tdt_1 \int_{t_0}^{t_1}dt_2 \ldots \int_{t_0}^{t_{n-1}}dt_n\, H(t_1)\ldots H(t_n) =\\
+= U(t,t_0)
 \label{2.178}
-\end{equation}
+\end{multline}
 
 \medskip
 
 \underline{Esercizio}:
 \[
-u_{xx}-u_t =0, \qquad u(0,t)=A_n\sin nt ,\quad u_x(0,t)=0
+u_{xx}-u_t =0, \qquad u(0,t)=A_n\sin nt ,\qquad u_x(0,t)=0
 \]
 %immafine problema parabolico soluzione
 
@@ -5067,7 +5079,7 @@ u(x,t)=v(x)w(t)
 u_{xx}=v''(x)w(t), \quad u_t=v(x)w'(t)
 \]
 \[
-u_{xx}=u_t \Rightarrow v'' w=vw' \Rightarrow \frac{v''}{v} = \frac{w'}{w} = k \in \mathbb{C} = cost
+u_{xx}=u_t \Rightarrow v'' w=vw' \Rightarrow \frac{v''}{v} = \frac{w'}{w} = k \in \mathbb{C}\quad\text{(costante)}
 \]
 \[
 v''=kv \Rightarrow v(x)=Ae^{\sqrt{k}x} + B e^{-\sqrt{k} x}
@@ -5105,10 +5117,10 @@ N.B.: $g(t)=g(t)^* \Rightarrow \tilde{g}(\chi)=\tilde{g}(-\chi)^*$ questo garant
 
 Nel nostro esempio: $g(t)=A_n\sin nt\rightarrow$ trasformata di Fourier:
 \[
-\tilde{g}(\chi)=\int_{-\infty}^{+\infty}dt e^{-i\chi t}A_n \sin nt = \frac{A_n}{2i}\int_{-\infty}^{+\infty}dt e^{-i\chi t}\left(e^{int}-e^{-int}\right)=
+\tilde{g}(\chi)=\int_{-\infty}^{+\infty}dt \, e^{-i\chi t}A_n \sin nt = \frac{A_n}{2i}\int_{-\infty}^{+\infty}dt \, e^{-i\chi t}\left(e^{int}-e^{-int}\right)=
 \]
 \[
-=\frac{A_n}{2i}\underbrace{\int_{-\infty}^{+\infty} dt e^{it(n-\chi)}}_{2\pi \delta(n-\chi)} -\frac{A_n}{2i}\underbrace{\int_{-\infty}^{+\infty} dt e^{-it(n+\chi)}}_{2\pi \delta(n+\chi)} = 
+=\frac{A_n}{2i}\underbrace{\int_{-\infty}^{+\infty} dt \, e^{it(n-\chi)}}_{2\pi \delta(n-\chi)} -\frac{A_n}{2i}\underbrace{\int_{-\infty}^{+\infty} dt \, e^{-it(n+\chi)}}_{2\pi \delta(n+\chi)} = 
 \]
 \[
 =i\pi A_n\big(\delta(n+\chi)-\delta(n-\chi)\big)
@@ -5116,14 +5128,14 @@ Nel nostro esempio: $g(t)=A_n\sin nt\rightarrow$ trasformata di Fourier:
 \[
 \Rightarrow u(x,t)=\frac{iA_n}{2}\left(e^{-int}\cosh(\sqrt{-in}x) - e^{int}\cosh(\sqrt{in}x)\right)
 \]
-Senza perdere generalit\`a: $n>0$ ($\sin(-nt)=-\sin(nt)$, riassorbile il - in $A_n$)
+Senza perdere generalit\`a: $n>0$ ($\sin(-nt)=-\sin(nt)$, riassorbire il $-$ in $A_n$)
 
 Usa:
 \[
-\sqrt{\pm in} =\frac{n}{2}(1\pm i)
+\sqrt{\pm in} =\sqrt{\frac{n}{2}}(1\pm i)
 \]
 \[
-\cosh(\alpha + \beta)=\cosh \alpha \cosh \beta + \sinh \alpha \sinh \beta
+\cosh(\alpha \pm \beta)=\cosh \alpha \cosh \beta \pm \sinh \alpha \sinh \beta
 \]
 \[
 \sin(\alpha \pm \beta)=\sin \alpha \cos \beta \pm \cos \alpha \sin \beta 
@@ -5143,6 +5155,7 @@ u(x,t)=\frac{A_n}{2}\left[e^{\sqrt{\frac{n}{2}}x}\sin\left(nt+\sqrt{\frac{n}{2}}
 \]
 
 \section{L'equazione di Korteweg-de Vries (KdV)}
+
 \begin{equation}
 \partial_t u + 6u\partial_xu+\partial^3_x u=0
 \label{2.179}
@@ -5151,7 +5164,7 @@ con $u=u(x,t)$, $x\in \R$, $t>0$
 \begin{itemize}
 \item Descrive delle onde in acqua non troppo profonda, ha delle applicazioni in molti rami della fisica, p.e. sistemi integrabili, teoria delle stringhe,...
 \item Equazione del terzo ordine
-\item ha delle soluzioni chiamate \emph{onde solitarie}
+\item Ha delle soluzioni chiamate \emph{onde solitarie}
 \end{itemize}
 
 Ansatz: 
@@ -5161,12 +5174,12 @@ u(x,t)=f(x-ct)
 \end{equation}
 $c$: velocit\`a di propagazione dell'onda
 
-nuova variabile $\xi:= x-ct$, $u(x,t)=f(\xi)$
+Nuova variabile: $\xi:= x-ct$, $u(x,t)=f(\xi)$
 \[
 \eqref{2.179} \Leftrightarrow \frac{\partial \xi}{\partial t}\frac{df}{d\xi}+6f(\xi)\frac{\partial \xi}{\partial x}\frac{df}{d\xi}+ \left(\frac{\partial \xi}{\partial x}  \right)^3\frac{\partial^3 f}{\partial \xi ^3}=0
 \]
 \[
-\frac{\partial \xi}{\partial t}=-c, \quad \frac{\partial \xi}{\partial x}=1, \quad f'=\frac{df}{d\xi}
+\frac{\partial \xi}{\partial t}=-c, \qquad \frac{\partial \xi}{\partial x}=1, \qquad f'=\frac{df}{d\xi}
 \]
 \begin{equation}
 \Rightarrow -cf' + 6ff' + f'''=0
@@ -5179,7 +5192,7 @@ Imponiamo ora una condizione fondamentale sul comportamento di $f$, ovvero: $f\t
 \eqref{2.181}\Rightarrow -cf' + (3f^2)' + f'''=0
 \label{2.182}
 \end{equation}
-con le nostre ipotesi
+Con le nostre ipotesi
 \begin{equation}
 \Rightarrow -cf + 3f^2 + f''=cost=0 
 \label{2.183}
@@ -5207,9 +5220,9 @@ Scegliamo il segno meno (altrimenti mandi $\xi$ in $-\xi$)
 \[
 \Rightarrow\int_{f(\xi)}^{\frac{c}{2}}\frac{df}{f\sqrt{c-2f}}=\xi - \xi_0
 \]
-$f=\frac{c}{2\cosh^2 z}$, $-\infty<z<\infty$, $df=-\frac{c\sinh z}{\cosh^3 z}dz$
+$f=\frac{c}{2\cosh^2 z}$, $-\infty<z<\infty$, $df=-c\frac{\sinh z}{\cosh^3 z}dz$
 \[
-\frac{df}{f\sqrt{c-2f}}=\frac{-c \sinh z}{\cosh^3 z\frac{c}{2\cosh^2z}\sqrt{c-\frac{c}{\cosh^2 z}}}dz=\frac{-2\sinh z dz}{\sqrt{c\cosh^2z - c}}=\frac{-2\sinh z dz}{\sqrt{c\sinh^2 z}}
+\frac{df}{f\sqrt{c-2f}}=\frac{-c \sinh z}{\cosh^3 z\frac{c}{2\cosh^2z}\sqrt{c-\frac{c}{\cosh^2 z}}}dz=\frac{-2\sinh z}{\sqrt{c\cosh^2z - c}}dz=\frac{-2\sinh z}{\sqrt{c\sinh^2 z}}dz
 \]
 \[
 \Rightarrow - \int_z^0 \frac{2}{\sqrt{c}}dz'=\xi - \xi_0 \Rightarrow\frac{2}{\sqrt{c}}z=\xi - \xi_0
@@ -5220,16 +5233,18 @@ $f=\frac{c}{2\cosh^2 z}$, $-\infty<z<\infty$, $df=-\frac{c\sinh z}{\cosh^3 z}dz$
 \[
 \Rightarrow u(x,t)=\frac{c}{2}\frac{1}{\cosh^2 \left[\frac{\sqrt{c}}{2}(x-ct-\xi_0)\right]}
 \]
-N.B.: $f(\xi)=\frac{c}{2}$
+N.B.: $f(\xi_0)=\frac{c}{2}$
 
-Dall'espressione \eqref{2.183} $f'' + 3f^2 - cf=0 \Rightarrow f''(\xi_0)=-\frac{c^2}{4}$
-
+Dall'espressione \eqref{2.183}:
+\[
+f'' + 3f^2 - cf=0 \Rightarrow f''(\xi_0)=-\frac{c^2}{4}
+\]
 %immagine crescita campana
 $\Rightarrow$ al crescere della velocit\`a, l'onda diventa pi\`u alta e pi\`u sottile.
 
 \section{Le trasformazioni di B\"acklund}
 
-Per ricavare le soluzioni delle equazioni di Liouville e di sine-Gordon introduciamo uno strumento molto utile per la risoluzione di molte equazioni differenziali alle derivate parziali non lineari, ovvero le trasformazioni di B\"acklund.
+Per ricavare le soluzioni delle equazioni di \emph{Liouville} e di \emph{sine-Gordon} introduciamo uno strumento utile per la risoluzione di molte equazioni differenziali alle derivate parziali non lineari, ovvero le trasformazioni di B\"acklund.
 
 Per semplicit\`a ci limitiamo al caso di 2 variabili $(x,y)$.
 
@@ -5254,7 +5269,7 @@ Le equazioni $B_i=0$ costituiscono la trasformazione di B\"acklund.
 
 Nel caso in cui $M=L$, le trasformazioni di B\"acklund costituiscono un'auto-trasformazione.
 
-\section{L'equazione di Liouville}
+\subsection{Equazione di Liouville}
 
 L'equazione di Liouville ha la forma
 \begin{equation}
@@ -5284,7 +5299,7 @@ Usando le \eqref{3.197a} e \eqref{3.197b} otteniamo:
 \label{3.198}
 \end{equation}
 \[
-\overset{\eqref{3.198}}{\Rightarrow} \partial_x\partial_y v=0\qquad \text{(equazione delle onde)}
+\overset{\eqref{3.196}}{\Rightarrow} \partial_x\partial_y v=0\qquad \text{(equazione delle onde)}
 \]
 Soluzione generale: 
 \begin{equation}
@@ -5295,7 +5310,7 @@ con $F,G$ funzioni arbitrarie.
 
 Dalla soluzione per $v$ andiamo a ricostruire la soluzione per $u$.
 
-A tal fine definiamo
+A tal fine definiamo:
 \begin{equation}
 z\equiv u+v 
 \label{3.200}
@@ -5308,13 +5323,13 @@ Utilizzando la trasformazione di B\"acklund \eqref{3.197b} e l'equazione $\parti
 \Rightarrow \underbrace{\partial_x\partial_y u}_{\partial_x\partial_y z} = \partial_x (\sqrt{2} e^\frac{z}{2})
 \label{3.201}
 \end{equation}
-Integriamo rispetto a $x$ e otteniamo
+Integriamo rispetto a $x$ e otteniamo:
 \begin{equation}
 \partial_y z = \sqrt{2}e^{\frac{z}{2}}+ \underbrace{G_1'(y)}_{cost} 
 \label{3.202}
 \end{equation}
 
-Definiamo una variabile
+Definiamo una variabile:
 \begin{equation}
 z_1 \equiv z-G_1
 \label{3.203}
@@ -5328,10 +5343,10 @@ z_1 \equiv z-G_1
 \end{equation}
 Questa si pu\`o integrare separando le variabili:
 \[
-\frac{\partial_y z_1}{e^{\frac{z_1}{2}}}=\sqrt{2}e^{\frac{G_1}{2}} \Rightarrow e^{\frac{z_1}{2}} (-2)=\sqrt{2}\int e^{\frac{G_1(y)}{2}} dy - \sqrt{2} \underbrace{F_1(x)}_{cost}
+\frac{\partial_y z_1}{e^{\frac{z_1}{2}}}=\sqrt{2}e^{\frac{G_1}{2}} \Rightarrow e^{-\frac{z_1}{2}} (-2)=\sqrt{2}\int e^{\frac{G_1(y)}{2}} dy - \sqrt{2} \underbrace{F_1(x)}_{cost}
 \]
 \begin{equation}
-\Rightarrow e^{-\frac{z_1}{2}}=\frac{1}{\sqrt{2}}\left(F_1(x) - \int dy e^{\frac{G_1}{2}}\right) 
+\Rightarrow e^{-\frac{z_1}{2}}=\frac{1}{\sqrt{2}}\left(F_1(x) - \int dy\, e^{\frac{G_1}{2}}\right) 
 \label{3.205}
 \end{equation}
 Derivo rispetto a $x$:
@@ -5348,14 +5363,14 @@ Derivo rispetto a $y$:
 \]
 Dato che $\partial_x\partial_y u = \partial_x\partial_y z_1$ possiamo riscrivere l'equazione precedente in questo modo:
 \begin{equation}
-\partial_x\partial_y u =\frac{1}{2} \partial_x z_1 \partial_y z_1 \overset{\eqref{3.204},\eqref{3.206}}{=} -F_1' e^{z_1 + \frac{G_1}{2}} \overset{\eqref{3.201},\eqref{3.203}}{\underset{v=F+G}{=}} -F_1'e^{u+F+G-\frac{G_1}{2}} 
+\partial_x\partial_y u =\frac{1}{2} \partial_x z_1 \partial_y z_1 \overset{\eqref{3.204},\eqref{3.206}}{=} -F_1' e^{z_1 + \frac{G_1}{2}} \overset{\eqref{3.203},\eqref{3.200}}{\underset{\eqref{3.199}}{=}} -F_1'e^{u+F+G-\frac{G_1}{2}} 
 \label{3.207}
 \end{equation}
-Se scegliamo $G_1=2G$ e $F_1=-\int dx e^{-F(x)}$, troviamo che $u$ soddisfa l'equazione di Liouville.
+Se scegliamo $G_1=2G$ e $F_1=-\int dx\, e^{-F(x)}$, troviamo che $u$ soddisfa l'equazione di Liouville.
 
 Dalla \eqref{3.205} otteniamo quindi:
 \begin{equation}
-z_1(x,y)=-2\ln \left[-\frac{\int dx e^{-F} + \int dy e^G}{\sqrt{2}} \right] 
+z_1(x,y)=-2\ln \left[-\frac{\int dx\, e^{-F} + \int dy\, e^G}{\sqrt{2}} \right] 
 \label{3.208}
 \end{equation}
 Dalla \eqref{3.200} e \eqref{3.203} sappiamo che
@@ -5363,11 +5378,12 @@ Dalla \eqref{3.200} e \eqref{3.203} sappiamo che
 u=z_1+G-F
 \]
 \begin{equation}
-\Rightarrow u(x,y)=G(y)-F(x) - \ln\left[\frac{1}{2}\left(\int dx e^{-F(x)} + \int dy e^{G(y)}\right)^2 \right] 
+\Rightarrow u(x,y)=G(y)-F(x) - \ln\left[\frac{1}{2}\left(\int dx\, e^{-F(x)} + \int dy\, e^{G(y)}\right)^2 \right] 
 \label{3.209}
 \end{equation}
 
-\section{Equazione di sine-Gordon}
+\subsection{Equazione di sine-Gordon}
+
 \begin{equation}
 \partial_x\partial_t u = \sin u 
 \label{3.210}
@@ -5376,33 +5392,33 @@ Con una trasformazione delle coordinate tipo:
 \[
 x \mapsto \frac{x+t}{2}, \quad t\mapsto\frac{x-t}{2}
 \]
-otteniamo
+otteniamo:
 \[
 \partial_x^2 u - \partial_t^2 u = \sin u
 \]
 (Paragona con Klein-Gordon $\partial_x\partial_t u = m^2 u$, per assonanza viene chiamata sine-Gordon, esiste anche sinh-Gordon)
 
 Trasformazioni di B\"acklund:
-\begin{subnumcases}{}
-\partial_x u + \partial_x v = 2a \sin\left(\frac{u-v}{2}\right) \label{3.2101} \\
-\partial_t u - \partial_t v = \frac{2}{a} \sin\left(\frac{u+v}{2}\right) \label{3.210b}
+\begin{subnumcases}{\label{3.211}}
+\partial_x u + \partial_x v = 2a \sin\left(\frac{u-v}{2}\right) \label{3.211a} \\
+\partial_t u - \partial_t v = \frac{2}{a} \sin\left(\frac{u+v}{2}\right) \label{3.211b}
 \end{subnumcases}
 Analogamente a quanto fatto nel caso dell'equazione di Liouville, deriviamo la prima rispetto a $t$ e la seconda rispetto a $x$
 \[
 \begin{gathered}
 \partial_t\partial_x u + \partial_t\partial_x v = a (\partial_t u - \partial_t v)\cos\left(\frac{u-v}{2}\right)=2\sin \left(\frac{u+v}{2}\right) \cos \left(\frac{u-v}{2}\right) \\
-\partial_x\partial_t u - \partial_x\partial_t v = \frac{2}{a}(\partial_x u + \partial_x v)\cos\left(\frac{u+v}{2}\right)=2\sin\left(\frac{u-v}{2}\right)\cos\left(\frac{u+v}{2}\right)
+\partial_x\partial_t u - \partial_x\partial_t v = \frac{1}{a}(\partial_x u + \partial_x v)\cos\left(\frac{u+v}{2}\right)=2\sin\left(\frac{u-v}{2}\right)\cos\left(\frac{u+v}{2}\right)
 \end{gathered}
 \]
-Usando le formule trigonometriche ottengo
+Usando le formule trigonometriche ottengo:
 \begin{equation}
 \begin{gathered}
 \partial_x\partial_t u = \sin u \\
 \partial_x\partial_t v=\sin v
 \end{gathered} 
-\label{3.211}
+\label{3.212}
 \end{equation}
-$\rightarrow$ in questo caso la \eqref{3.210} \`e un'auto-trasformazione.
+$\rightarrow$ in questo caso la \eqref{3.211} \`e un'auto-trasformazione.
 
 $\Rightarrow$ Se si conosce una soluzione $v$ dell'equazione di sine-Gordon, se ne pu\`o costruire un'altra. 
 
@@ -5412,31 +5428,32 @@ $\Rightarrow$ Le trasformazioni di B\"acklund diventano:
 \begin{subequations}
 \begin{equation}
 \partial_x u = 2a\sin\left(\frac{u}{2}\right) 
-\label{3.212a}
+\label{3.213a}
 \end{equation}
 \begin{equation}
 \partial_t u = \frac{2}{a}\sin\left(\frac{u}{2}\right) 
-\label{3.212b}
+\label{3.213b}
 \end{equation}
 \end{subequations}
-Integriamo entrambi separando le variabili:
+Integriamo entrambe separando le variabili:
 \[
-\frac{\partial_x u }{\sin\frac{u}{2}}=2a \Rightarrow \int\frac{du}{\sin\frac{u}{2}}=2\ln\left|\tan\frac{u}{4}\right| \Rightarrow \partial_x 2\ln \left| \tan \frac{u}{4}\right|
+\frac{\partial_x u }{\sin\frac{u}{2}}=2a
 \]
 \begin{subequations}
 \begin{equation}
 2 \ln \left| \tan \frac{u}{4}\right|=2ax + f(t) 
-\label{3.213a}
+\label{3.214a}
 \end{equation}
 \begin{equation}
 2 \ln \left| \tan \frac{u}{4}\right|= \frac{2}{a} t + g(x) 
-\label{3.213b}
+\label{3.214b}
 \end{equation}
+\label{3.214}
 \end{subequations}
 Perch\'e le due equazioni siano compatibili dobbiamo avere:
 \begin{equation}
 2ax + f(t)=\frac{2}{a}t + g(x) 
-\label{3.214}
+\label{3.215}
 \end{equation}
 \[
 \Rightarrow 2ax-g(x)=\frac{2}{a}t - f(t):=k = cost
@@ -5447,7 +5464,7 @@ Perch\'e le due equazioni siano compatibili dobbiamo avere:
 \[
 \Rightarrow f(x)=\frac{2}{a}t-k
 \]
-Sostituiamo nella \eqref{3.213} e otteniamo
+Sostituiamo nelle \eqref{3.214} e otteniamo
 \[
 \left| \tan \frac{u}{4}\right| = e^{-\frac{k}{2}+ax+\frac{t}{a}}
 \]
@@ -5466,7 +5483,7 @@ Queste soluzioni vengono chiamate multisolitoniche, sono molto importanti nelle 
 
 \medskip
 
-\underline{Esercizio}: Ricavare la \eqref{3.216} dall'equazione di sine-Gordon, usando l'ansatz (v. KdV):
+\underline{Esercizio}: Ricavare la \eqref{3.216} dall'equazione di sine-Gordon, usando l'ansatz (v. KdV): %riferimento?
 \[
 u(x,t)=f(\underbrace{x+ct}_{\xi})
 \]
@@ -5546,7 +5563,7 @@ Otteniamo quindi:
 
 La \eqref{2.187} viene chiamata \emph{Equazione di Lax}.
 
-Come vedremo sotto in un esempio concreto, questa forma dell'equazione di KdV implica (fra l'altro) che gli autovalori di $L$ non dipendono da $t$. (ndr in pratica gli autovalori di L mettono a disposizione delle costanti del moto, analoghe al caso della maccanica classica). 
+Come vedremo sotto in un esempio concreto, questa forma dell'equazione di KdV implica che gli autovalori di $L$ non dipendono da $t$ (in pratica gli autovalori di $L$ mettono a disposizione delle costanti del moto, analoghe al caso della meccanica classica). 
 
 Un altro modo per ottenere la \eqref{2.187} \`e come condizione di compatibilit\`a dei 2 problemi lineari
 \begin{equation}
@@ -5574,7 +5591,7 @@ L'importanza chiave dell'osservazione di Lax \`e che qualsiasi equazione differe
 \[
 u_i(t) \quad i=1,\dots,N
 \]
-Per avere integrabilit\`a nel senso di Liouville, servono $n$ costanti del moto $I_i$ in involuzione, cio\`e deve valere 
+Per avere integrabilit\`a nel senso di Liouville, servono $n$ costanti del moto $I_i$ in involuzione, cio\`e deve valere:
 \[
 \left\{I_i,H \right\}_{PB}=0, \left\{I_i,I,j\right\}_{PB}=0
 \]
@@ -5728,7 +5745,7 @@ con 3 coefficienti della matrice che sono identicamente nulli.
 
 \medskip
 
-Queste due equazioni sono chiamate \emph{coppie di Lax}, le parentesi tonde identificano delle derivate covarianti
+Queste due equazioni sono chiamate \emph{coppie di Lax} (le parentesi tonde identificano delle derivate covarianti):
 \[
 \begin{matrix}
 \left(\partial_x - U \right)\left(\begin{matrix}
@@ -5741,7 +5758,7 @@ Queste due equazioni sono chiamate \emph{coppie di Lax}, le parentesi tonde iden
 \end{matrix} \right) = 0
 \end{matrix}
 \]
-$U,V$ sono connessioni, la \eqref{2.193} la curvatura di questa connessione
+$U,V$ sono connessioni, la \eqref{2.193} la curvatura di questa connessione. % ??
 
 \medskip
 
@@ -5774,17 +5791,17 @@ coefficienti di $\lambda^3$:
 \left[U_1,V_2\right]=0 
 \label{2.196a}
 \end{equation}
-coefficienti di $\lambda^2$
+coefficienti di $\lambda^2$:
 \begin{equation}
 -\frac{\partial V_2}{\partial x} + \left[U_1,V_1\right] + \left[U_0,V_2\right]=0 
 \label{2.196b}
 \end{equation}
-coefficienti di $\lambda$
+coefficienti di $\lambda$:
 \begin{equation}
 \frac{\partial U_1}{\partial t}-\frac{\partial V_1}{\partial x} + \left[U_1,V_0\right] + \left[U_0,V_1\right]=0 
 \label{2.196c}
 \end{equation}
-coefficienti di $\lambda^0$
+coefficienti di $\lambda^0$:
 \begin{equation}
 \frac{\partial U_0}{\partial t}-\frac{\partial V_0}{\partial x} + \left[U_0,V_0\right] =0 
 \label{2.196d}
@@ -5809,7 +5826,7 @@ iqr & - \frac{iq_x}{2} \\
 \frac{ir_x}{2} & - iqr
 \end{matrix}\right)
 \]
-se vale 
+se vale:
 \[
 \left(\begin{matrix}
 0 & q_t + \frac{i}{2}q_{xx} - 2iq^2 r \\
@@ -5823,7 +5840,7 @@ iq_t - \frac{1}{2}q_{xx} + 2 q^2 r=0\\
 ir_t + \frac{1}{2} r_{xx} -2 r^2 q =0 
 \end{cases}
 \]
-Questo sistema \`e consistente con $r=\pm q^*$ che d\`a
+Questo sistema \`e consistente con $r=\pm q^*$ che d\`a:
 \[
 iq_t - \frac{1}{2}q_{xx}\pm |q|^2 q=0
 \]
@@ -5846,9 +5863,9 @@ La velocit\`a $\vect{u}$ soddisfa l'\emph{equazione di Navier-Stokes della fluid
 Questa non \`e nient'altro che un'applicazione della seconda legge di Newton a un fluido.
 I termini a sinistra rappresentano la variazione del momento
 \[
-\frac{d \vect{u}}{d t} = \frac{\partial \vect{u}}{\partial t} + \sum_{i=1}^n \frac{\partial \vect{u}}{\partial x_i} \frac{\partial x_i}{\partial t} = \frac{\partial \vect{u}}{\partial t} + \sum_{i=1}^n \frac{\partial \vect{u}}{\partial x_i} \vect{u}_i=\frac{\partial \vect{u}}{\partial t}+(\vect{u}\cdot \nabla) \vect{u}
+\frac{d \vect{u}}{d t} = \frac{\partial \vect{u}}{\partial t} + \sum_{i=1}^n \frac{\partial \vect{u}}{\partial x_i} \frac{\partial x_i}{\partial t} = \frac{\partial \vect{u}}{\partial t} + \sum_{i=1}^n \frac{\partial \vect{u}}{\partial x_i} u_i=\frac{\partial \vect{u}}{\partial t}+(\vect{u}\cdot \nabla) \vect{u}
 \]
-Il termine $\frac{1}{\rho}\nabla p$ descrive le forze di pressione mentre $\nu \Delta \vect{u}$ descrive la forza di viscosit\`a:
+Il termine $-\frac{1}{\rho}\nabla p$ descrive le forze di pressione mentre $\nu \Delta \vect{u}$ descrive la forza di viscosit\`a:
 il coefficiente $\nu$ \`e detto \emph{viscosit\`a cinematica} ed \`e definito come $\nu=\frac{\eta}{\rho}$, con $\eta$ \emph{viscosit\`a dinamica}.
 Infine $\vect{f}_\text{ext}$ esprime possibili forze esterne quali gravit\`a o forza di Lorentz (se il fluido \`e carico).
 Navier-Stokes \`e un'equazione molto difficile da risolvere (\`e uno dei problemi del millennio).
@@ -5874,17 +5891,19 @@ $\rightarrow$ localmente possiamo scrivere
 \vect{u}=\nabla \times \vect{A} \qquad\text{(potenziale vettore)}
 \]
 \[
-\nabla \times (\nabla \times \vect{A})=\vect{\omega}
+\Rightarrow \nabla \times (\nabla \times \vect{A})=\vect{\omega}
 \]
 uso $\nabla\times(\nabla\times \vect{A})=\nabla(\nabla\cdot \vect{A}) - \Delta \vect{A}$
 \[
 \Rightarrow \nabla(\nabla\cdot \vect{A}) - \Delta \vect{A}=\vect{\omega}
 \]
 $\vect{A}$ non \`e determinato univocamente: se mandiamo $\vect{A}$ in $\vect{A}+\nabla\chi$, $\vect{\omega}$ rimane invariante:
+\begin{samepage}
 \[
 \nabla\times(\vect{A}+\nabla\chi)=\nabla\times\vect{A}+\nabla\times(\nabla\chi)\overset{\nabla\times\nabla\chi=0}{=}\nabla\times\vect{A}
 \]
 \centerline{\emph{Invarianza di Gauge}}
+\end{samepage}
 
 Questa libert\`a ci permette di fare una scelta per $\vect{A}$, p.e. \emph{Gauge di Coulomb}: $\nabla\cdot\vect{A}=0$.
 
@@ -5892,7 +5911,7 @@ In tal caso la vorticit\`a:
 \[
 \vect{\omega}=-\Delta \vect{A}
 \]
-$\rightarrow$ Equazione di Poisson per le correnti di $\vect{A}$.
+$\rightarrow$ Equazione di Poisson per le componenti di $\vect{A}$.
 
 Soluzione: 
 \[
@@ -5910,7 +5929,7 @@ Considera una funzione $f(x)$ con $f(x)=0$ per $x<0$.
 
 \underline{Definizione}: Trasformata di Laplace:
 \[
-\mathcal{L}[f](s):=\int_0^{\infty} e^{-sx} f(x)dx, \qquad s \in \mathbb{C} \equiv F(s)
+\mathcal{L}[f](s):=\int_0^{\infty} e^{-sx} f(x)dx\equiv F(s), \qquad s \in \mathbb{C}
 \]
 N.B.: La trasformata di Laplace converge assolutamente se l'integrale $\int_0^{\infty} |e^{-sx} f(x)| dx$ esiste
 \[
@@ -5920,11 +5939,11 @@ Dal teorema della convergenza dominata segue che i valori tali per cui $F(s)$ co
 
 \smallskip
 
-$a$ viene chiamata ascissa di convergenza assoluta e dipende dal comportamento di crescita di $f$. Nella regione di convergenza assoluta $F(s)$ \`e una funzione analitica (senza dim.)
+$a$ viene chiamata \emph{ascissa di convergenza assoluta} e dipende dal comportamento di crescita di $f$. Nella regione di convergenza assoluta $F(s)$ \`e una funzione analitica (senza dim.)
 
 \smallskip
 
-Integrando per parti troviamo
+Integrando per parti troviamo:
 \[
 \int_0^{\infty} e^{-sx} f'(x) dx = e^{-sx} f(x)\Big|_0^\infty + s \int_0^{\infty} e^{-sx} f(x) dx = -f(0) + s\mathcal{L}[f]
 \]
@@ -5934,21 +5953,22 @@ Integrando per parti troviamo
 \label{eqtriangle}
 \end{equation}
 N.B.: Siccome $\int_0^{\infty} e^{-sx} dx = \frac{1}{s}$, $\frac{1}{s}$ \`e la trasformata di Laplace della funzione 
-
-$H(x)=\begin{cases} 1 & x \geq 0 \\ 0 & x<0 \end{cases}$ (Heaviside step function)
+\mbox{$H(x)=\left\{\begin{matrix} 1 & x \geq 0 \\ 0 & x<0 \end{matrix}\right.$} (Heaviside step function)
 
 \medskip
 
-Trasformazione di Laplace inversa:
+\emph{Trasformazione di Laplace inversa}:
 \[
 f(x)=\frac{1}{2 \pi i} \lim_{L \to \infty} \int^{s+iL}_{s-iL}F(\sigma) e^{\sigma x} d\sigma
 \]
 \centerline{\emph{Mellin inversion theorem} (teorema di inversione di Mellin)}
 
+\smallskip
+
 con $s>a$ ($\Rightarrow$ $F(\sigma)$ esiste sul cammino di integrazione (su cui $\operatorname{Re}\sigma=s$))
-
-%immagine 
-
+\begin{center}
+\includegraphics[width=0.5\textwidth]{immagini/mellin}
+\end{center}
 \medskip
 
 Check:
@@ -5963,7 +5983,7 @@ $\sigma=s+iy$, $-L\leq y \leq L$, $d\sigma=i dy$
 =\frac{1}{2 \pi} \int^\infty_0 dx' f(x') \lim_{L \to \infty} \underbrace{\int^{+L}_{-L} e^{(s+iy)(x-x')} dy }_{e^{s(x-x')}\big[\frac{e^{iy(x-x')}}{i(x-x')}\big]^{+L}_{-L}}=
 \]
 \[
-=\frac{1}{2 \pi i} \int^\infty_0 dx' f(x') e^{s (x-x')} \lim_{L \to \infty} \frac{2 i \sin(L(x-x'))}{x-x'}=
+=\frac{1}{2 \pi i} \int^\infty_0 dx' f(x') e^{s (x-x')} \lim_{L \to \infty} \frac{2 i \sin\big(L(x-x')\big)}{x-x'}=
 \]
 $\delta_\varepsilon(x)=\frac{1}{\pi x} \sin(\frac{x}{\varepsilon})$, $L=\frac{1}{\varepsilon}$
 \[
@@ -5971,17 +5991,17 @@ $\delta_\varepsilon(x)=\frac{1}{\pi x} \sin(\frac{x}{\varepsilon})$, $L=\frac{1}
 \]
 $f(x')=0$ per $x'\leq0$
 \[
-=\int_{-\infty}^\infty dx' f(x') e^{s (x-x')} \delta(x-x')=f(x) \qquad \checkmark
+=\int_{-\infty}^{+\infty} dx' f(x') e^{s (x-x')} \delta(x-x')=f(x) \qquad \checkmark
 \]
 
 \medskip
 
 \underline{Esercizio}:
 \begin{enumerate}
-\item Trovare la trasformata di Laplace si $\sin x$
+\item Trovare la trasformata di Laplace di: $\sin x$
 
 Risultato: $F(x)=\frac{1}{s^2+1}$
-\item Trovare la trasformata di Laplace si $x^{\alpha -1}$, $\alpha>0$
+\item Trovare la trasformata di Laplace di: $x^{\alpha -1}$, $\alpha>0$
 
 (usare: $\Gamma(\alpha)=\int_0^{\infty} y^{\alpha -1} e^{-y} dy$)
 \end{enumerate}
