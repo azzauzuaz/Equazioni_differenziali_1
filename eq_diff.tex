@@ -196,7 +196,7 @@ Nonostante ci\`o scriveremo in seguito formalmente che:
 \end{equation}
 Si ha:
 \[
-\int x\delta(x)\phi(x)dx = x\phi(x)\Big|_{x=0}=0 \quad \forall \phi \Rightarrow x\delta(x)=0
+\int x\delta(x)\phi(x)dx = x\phi(x)\Big|_{x=0}=0 \;\; \forall \phi \; \Rightarrow \; x\delta(x)=0
 \]
 Facciamo formalmente la derivata usando la regola di Leibniz:
 \[
@@ -285,7 +285,7 @@ In $N$ dimensioni: coordinate cartesiane $x_1,x_2,\dots,x_n \Rightarrow \delta(\
 
 \medspace
 
-Propriet\`a utili della delta di Dirac:
+\emph{Propriet\`a utili della delta di Dirac}:
 \[
 \delta(-\vect{r})=\delta(\vect{r})
 \]
@@ -297,18 +297,18 @@ f(\vect{\rho}+\vect{r}')\Big |_{ \vect{\rho}=0}  = f(\vect{r}')
 \end{equation}
 Scegli $f=1$ $\Rightarrow$ formalmente 
 \begin{equation}
-\int_{\R^n}d^n\vect{r}\delta(\vect{r}-\vect{r}')=1
+\int_{\R^n}d^n\vect{r}\,\delta(\vect{r}-\vect{r}')=1
 \end{equation}
 
 \medspace
 
-Delta di Dirac in coordinate curvilinee:
+\emph{Delta di Dirac in coordinate curvilinee}:
 
 La quantit\`a invariante per trasformazione di coordinate \`e: $d^n\vect{r}\,\delta(\vect{r}-\vect{r}')$
 
 Coordinate: $\xi_i (x_i,\dots,x_n)$, $i=1,\dots,n$, $x_j$ sono le coordinate cartesiane
 
-Jacobiano
+Jacobiano:
 \[
 J(x_i,\xi_j)=\left(\begin{matrix}
 \frac{\partial x_1}{\partial \xi_1} & \dots & \frac{\partial x_1}{\partial \xi_n}\\
@@ -397,7 +397,7 @@ e dimostrare usando la \eqref{1.7} che in un sistema di cariche puntiformi
 \]
 
 \underline{Esempio}: Carica $Q$ uniformemente distribuita su una superficie sferica con raggio $R$. 
-Determinare $\rho(\vect{r})$
+Determinare $\rho(\vect{r})$.
 
 Chiamo $\rho(\vect{r})=A Q\delta(r-R)$ con $A$ da determinare.
 \[
@@ -487,7 +487,7 @@ Completezza:
 
 Ortogonalit\`a:
 \begin{equation}
-\int d^n\x\,\varphi_{k}(\x)\varphi_{\kp}^{*}(\xp)=\left(\frac{1}{2\pi}\right)^{n}\int d^n\x\, e^{i(\kk-\kp)\cdot\x}=\delta (\kk-\kp)
+\int d^n\x\,\varphi_{\kk}(\x)\varphi_{\kp}^{*}(\x)=\left(\frac{1}{2\pi}\right)^{n}\int d^n\x\, e^{i(\kk-\kp)\cdot\x}=\delta (\kk-\kp)
 \label{1.18}
 \end{equation}
 
@@ -751,7 +751,7 @@ La \eqref{2.3} diventa:
 \]
 Dato che gli esponenziali sono linearmente indipendenti, devo annullare i coefficienti:
 \begin{equation}
-\frac{\partial}{\partial t}\tilde{T}(\kk,t) + \chi \kk^2\tilde{T}(\kk,t)=0 \Rightarrow \tilde{T}(\kk,t)=e^{-\chi\kk^2 t}\tilde{T}_0(\kk)
+\frac{\partial}{\partial t}\tilde{T}(\kk,t) + \chi \kk^2\tilde{T}(\kk,t)=0 \quad\Rightarrow\quad \tilde{T}(\kk,t)=e^{-\chi\kk^2 t}\tilde{T}_0(\kk)
 \label{2.8}
 \end{equation}
 
@@ -793,7 +793,7 @@ G(\z,t)=\frac{1}{(2\pi)^d}\int d^d \kk\, e^{i\kk\cdot \z-\chi \kk^2 t}
 \]
 Cerco di ricondurlo ad un integrale gaussiano:
 \[
-i\kk\cdot \z-\chi \kk^2 t =-\chi t \left(\kk-\frac{i \z}{2 \chi t} \right)^2 \qquad  \kk':=\kk-\frac{i\z}{2\chi t}
+i\kk\cdot \z-\chi \kk^2 t =-\chi t \left(\kk-\frac{i \z}{2 \chi t} \right)^2 - \frac{\z^2}{4\chi t} \qquad  \kk':=\kk-\frac{i\z}{2\chi t}
 \]
 \[
 \Rightarrow G(\z,t)=\frac{1}{(2\pi)^d}\exp\left(\frac{-\z^2}{4\chi t}\right)\int d^d \kk' e^{-\chi\kk'^2 t}=\frac{1}{(2\pi)^d}\exp\left(\frac{-\z^2}{4\chi t}\right)\left(\frac{\pi}{\chi t}\right)^\frac{d}{2}
@@ -834,7 +834,7 @@ dove la funzione degli errori di Gauss \`e definita:
 \operatorname{erf}(s):=\frac{2}{\sqrt{\pi}}\int_0^s e^{-r^2}dr
 \end{equation}
 
-Dato che la soluzione \`e pari possiamo limitarci a $x\geq 0$
+Dato che la soluzione \`e pari possiamo limitarci a $x\geq 0$.
 \begin{center}
 \includegraphics[width=0.5\textwidth]{immagini/calore}
 \end{center}
@@ -867,9 +867,7 @@ e la \eqref{2.11} implica:
 \lim_{t\to 0}T(\x,t)=\int d^d\y \lim_{t\to 0}G(\x-\y,t)T_0(\y)=\int d^d \y\,\delta(\x-\y)T_0(\y)=T_0(\x) \qquad \blacksquare
 \]
 
-\medskip
-
-\textbf{Flusso di calore con produzione di calore}
+\subsection{Flusso di calore con produzione di calore}
 \[
 \frac{\partial T}{\partial t} -\chi\Delta T=S(\x,t) \qquad t>0
 \]
@@ -877,7 +875,7 @@ $S$ \`e il termine di sorgente, rende l'equazione lineare non omogenea.
 
 \smallskip
 
-Soluzione particolare dell'equazione non omogenea:
+\emph{Soluzione particolare dell'equazione non omogenea}:
 
 Definiamo una funzione di Green $G$ tramite una convoluzione spaziale e temporale:
 \begin{equation}
@@ -1011,9 +1009,7 @@ T(\x,t)=T_\text{p}(\x,t)+T_\text{om}(\x,t)
 
 Se $S(\x',t')=0$ per $t'<0$ $\Rightarrow T_p(\x,0)=0$ e quindi abbiamo che $T(\x,0)=T_\text{om}(\x,0)=T_0(\x)$.
 
-\medskip
-
-\textbf{Equazione del calore con bordo}
+\subsection{Equazione del calore con bordo}
 
 Considera il problema di Dirichlet in un dominio connesso (o su una variet\`a con bordo) $U$.
 \[
@@ -1050,7 +1046,7 @@ T(\x,t)\Big|_{\x\in\partial U}=\int d^d\y \sum_n e^{-\lambda_n \chi t} \phi_n(\x
 \frac{\partial}{\partial t}T(\x,t)=\int d^d\y \sum_n (-\lambda_n \chi)e^{-\lambda_n\chi t} \phi_n(\x)\phi_n(\y )T_0(\y )
 \]
 \[
-\chi\Delta_{\x}T(\x,t)=\int d^d \y  \sum_n e^{-\lambda_n \chi t}\chi \underbrace{\Delta_{\x}\phi_n(\x)}_{-\lambda_n \phi_n(\n)} \phi_n(\y )T_0(\y )=\frac{\partial}{\partial t}T(\x,t) \quad \checkmark
+\chi\Delta_{\x}T(\x,t)=\int d^d \y  \sum_n e^{-\lambda_n \chi t}\chi \underbrace{\Delta_{\x}\phi_n(\x)}_{-\lambda_n \phi_n(\x)} \phi_n(\y )T_0(\y )=\frac{\partial}{\partial t}T(\x,t) \quad \checkmark
 \]
 
 \medskip
@@ -1061,7 +1057,7 @@ Risolvere:
 \[
 \partial_t T=\chi\partial_{x}^2T, \qquad x\in[0,L], \qquad t\geq0
 \]
-Con condizioni al contorno: $T(0,t)=T(L,t)=0$, $T(x,0)=T_0(x)$
+Con condizioni al contorno: $T(0,t)=T(L,t)=0, \quad T(x,0)=T_0(x)$
 
 \[
 \partial^{2}_{x}\phi(x)=-\lambda\phi(x) 
@@ -1070,7 +1066,7 @@ Con condizioni al contorno: $T(0,t)=T(L,t)=0$, $T(x,0)=T_0(x)$
 \Rightarrow \phi_n(x)=\phi_0\sin{\left(\sqrt{\lambda_n}\, x\right)},\quad \lambda_n=\frac{n^2\pi^2}{L^2}, \quad n=0,1,2,\dots
 \]
 \[
-\int_0^L dx\, \phi^2_n(x)=1\Rightarrow\phi_0=\sqrt{\frac{2}{L}}
+\int_0^L dx\, \phi^2_n(x)=1 \quad\Rightarrow\quad \phi_0=\sqrt{\frac{2}{L}}
 \]
 \begin{equation}
 \eqref{2.20}\Rightarrow G(t,x,y)=\frac{2}{L}\sum_{n=1}^{\infty}e^{-\frac{n^2\pi^2}{L^2}\chi t}\sin{\left(\frac{n\pi}{L}x\right)}\sin{\left(\frac{n\pi}{L}y\right)}
@@ -1105,8 +1101,8 @@ N.B.:
 
 \medskip
 
+\begin{samepage}
 \underline{Esercizi}:
-
 \begin{enumerate}[label=(\roman*)]
 
 \item Risolvere: $\partial_t T=\chi\Delta T$ nel cubo
@@ -1155,6 +1151,7 @@ con $\lambda=l(l+1)$ e $Y_l^m$ armoniche sferiche.
 
 Sostituire le \eqref{2.24}, \eqref{2.25} col corrispondente sviluppo in armoniche sferiche.
 \end{enumerate}
+\end{samepage}
 
 \medskip
 
@@ -1367,7 +1364,7 @@ T(r,\varphi,z,t)=\tau(t)R(r)\Phi(\varphi)Z(z)
 \[
 \Rightarrow \underbrace{ \frac{1}{R}(R'' + \frac{1}{r}R') + \frac{1}{r^2} \frac{\Phi''}{\Phi}}_{C_1-C_2}+\underbrace{\frac{Z''}{Z}}_{C_2}-\underbrace{\frac{1}{\chi}\frac{\tau'}{\tau}}_{C_1}=0
 \]
-La funzione di $z$ \`e costante $=C_2$, analogamente la funzione di $t$ $=C_2$ e di conseguenza la parte rimanente funzione di $r,\varphi$ \`e costante $=C_1-C_2$.
+La funzione di $z$ \`e costante ($C_2$), analogamente la funzione di $t$ ($C_1$) e di conseguenza la parte rimanente funzione di $r,\varphi$ \`e costante ($C_1-C_2$).
 
 Questo \`e possibile solo se tutte e tre le funzioni sono costanti. L'equazione differenziale alle derivate parziali si \`e separata in un insieme di equazioni differenziali ordinarie.
 
@@ -1595,7 +1592,7 @@ dy=\frac{dx}{p(x)} \Rightarrow y=\int \frac{dx}{p(x)}
 \`E un'equazione di oscillatore forzato con frequenza che dipende dal tempo.
 Viene chiamato \emph{oscillatore di Ermakoff}, e trova applicazioni in Cosmologia (equazione di Mukhanov-Sasaki) per quanto riguarda la teoria dell'inflazione.
 
-\medskip
+\medskip %\subsection{Problema ai valori iniziali}
 
 Equazione omogenea: 
 \begin{equation}
@@ -2033,7 +2030,7 @@ Questo distingue il problema ai valori al contorno dai problemi ai valori inizia
 
 Ricapitolando:
 \[
-u_1=u_2=0:\text{ Dirichlet}
+\mu_1=\mu_2=0:\text{ Dirichlet}
 \]
 \[
 \sigma_1=\sigma_2=0:\text{ Neumann}
@@ -2075,7 +2072,7 @@ u(x)=\int_\alpha^\beta G(x,\xi)f(\xi)d\xi + \frac{p(\alpha)}{\mu_1}a\,G(x,\alpha
 $(\mu_1,\mu_2\neq 0)$
 \begin{itemize}
 \item $\mu_1=0$: sostituisci $\frac{1}{\mu_1}G(x,\alpha)$ con $\frac{1}{\sigma_1}\frac{\partial G}{\partial \xi}(x,\alpha)$
-\item $\mu_2=0$: sostituisci $\frac{1}{\mu_2}G(x,\beta)$ con $-\frac{1}{\sigma_2}\frac{\partial G}{\partial \xi}(x,\alpha)$
+\item $\mu_2=0$: sostituisci $\frac{1}{\mu_2}G(x,\beta)$ con $-\frac{1}{\sigma_2}\frac{\partial G}{\partial \xi}(x,\beta)$
 \end{itemize}
 (Siccome $D\neq 0$ non pu\`o essere $\mu_1=\sigma_1=0$ oppure $\mu_2=\sigma_2=0$)
 
@@ -2213,7 +2210,7 @@ s_n(\xi)=\frac{2}{L}\int_0^L S(y,\xi) \sin \frac{n\pi y}{L}dy
 \end{equation}
 con
 \begin{equation}
-G(t-\xi,x,y):=\frac{2}{L}\sum_{n=1}^{\infty}\frac{2}{L}\exp \left(-\frac{\chi n^2 \pi^2}{L^2}(t-\xi)\right) \sin \frac{n\pi x}{L}\sin \frac{n\pi y}{L}
+G(t-\xi,x,y):=\frac{2}{L}\sum_{n=1}^{\infty}\exp \left(-\frac{\chi n^2 \pi^2}{L^2}(t-\xi)\right) \sin \frac{n\pi x}{L}\sin \frac{n\pi y}{L}
 \label{2.74}
 \end{equation}
 che \`e identica alla \eqref{2.22}.
@@ -2683,7 +2680,7 @@ $G^R(\x,\y,t)$: \emph{funzione di Green ritardata}
 G^R(\x,\y,t)=0 \quad \text{per }t<0
 \] 
 
-$G^R(\x,\y,t)$ rappresenta l'ampiezza di probabilit\`a che la particella vada dal punto $(\y,t=0)$ al punto $(\x,t)$ (\`e il propagatore!).
+$G^R(\x,\y,t)$ rappresenta l'ampiezza di probabilit\`a che la particella vada dal punto \mbox{$(\y,t=0)$} al punto $(\x,t)$ (\`e il propagatore!).
 
 \smallskip
 
